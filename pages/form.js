@@ -1,12 +1,27 @@
 import React from "react";
-import { collection, getDocs, doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 
 import { db } from "./_app";
+import { useEffect, useState } from "react";
+import { useMoralis } from "react-moralis";
 
 function form() {
+  const { authenticate, isAuthenticated, user, logout } = useMoralis();
+  const [address, setAddress] = useState();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      setAddress(user.attributes.ethAddress);
+    } else {
+      setAddress("");
+    }
+  }, [isAuthenticated]);
+
   const readData = async () => {
-    const walletAddress = "0x0B84BC8aA0B38F46EdD392B4F0270a870e30AFeF";
-    const docRef = doc(db, "wallets", walletAddress);
+    setAddress(user.attributes.ethAddress);
+    console.log(address);
+
+    const docRef = doc(db, "wallets", address);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
@@ -14,6 +29,17 @@ function form() {
     } else {
       // doc.data() will be undefined in this case
       console.log("No such document!");
+    }
+  };
+
+  const writeData = async () => {
+    if (isAuthenticated) {
+      await setDoc(doc(db, "wallets", address), {
+        name: "EXAMPLE",
+        emailAddress: "EMAIL",
+      });
+    } else {
+      alert("Can not write. Not authenticated");
     }
   };
 
@@ -25,7 +51,10 @@ function form() {
       <p>Name: </p>
       <p>Email Address: </p>
 
-      <button onClick={readData}>Read data</button>
+      <div>
+        <button onClick={readData}>Read data (Dev purposes)</button>
+        <button onClick={writeData}>Update</button>
+      </div>
     </div>
   );
 }
