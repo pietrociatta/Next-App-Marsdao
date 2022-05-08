@@ -37,6 +37,7 @@
     "ethers": "^5.6.5",
     "hardhat": "^2.9.3",
     "postcss": "^8.4.13",
+    "solidity-coverage": "^0.7.21",
     "tailwindcss": "^3.0.24"
   }
 }
