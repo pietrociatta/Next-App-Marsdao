@@ -20,9 +20,20 @@ const firebaseConfig = {
   measurementId: "G-1TG45GDLPM",
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+let analytics;
+let firestore;
+
+if (firebaseConfig?.projectId) {
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+  if (app.name && typeof window !== "undefined") {
+    analytics = getAnalytics(app);
+  }
+
+  // // Access Firebase services using shorthand notation
+  // firestore = getFirestore();
+}
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -37,3 +48,4 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
+export { analytics, firestore };
