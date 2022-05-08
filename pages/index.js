@@ -1,7 +1,8 @@
 import React from "react";
 import { useMoralis } from "react-moralis";
 import Hero from "../components/Hero";
-import Header from "../components/Header";
+
+import Collections from "../components/Collections";
 
 function index() {
   const {
@@ -12,12 +13,14 @@ function index() {
     logout,
   } = useMoralis();
   return (
-    <div className="bg-black  mx-auto">
-      <div className="">
-        <Header />
+    <div className="bg-white">
+      <div className="bg-black  mx-auto">
+        <div className="max-w-screen-xl mx-auto ">
+          <Hero />
+        </div>
       </div>
-      <div className="max-w-screen-xl mx-auto ">
-        <Hero />
+      <div className="max-w-screen-xl mx-auto bg-white ">
+        <Collections />
       </div>
     </div>
   );
