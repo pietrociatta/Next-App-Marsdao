@@ -1,5 +1,5 @@
 import React from "react";
-import { collection, getDocs, doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 
 import { db } from "./_app";
 import { useEffect, useState } from "react";
@@ -8,6 +8,7 @@ import { useMoralis } from "react-moralis";
 function form() {
   const { authenticate, isAuthenticated, user, logout } = useMoralis();
   const [address, setAddress] = useState();
+
   useEffect(() => {
     if (isAuthenticated) {
       setAddress(user.attributes.ethAddress);
@@ -31,6 +32,13 @@ function form() {
     }
   };
 
+  const writeData = async () => {
+    await setDoc(doc(db, "wallets", "0xhardcoded"), {
+      name: "HARDCODED EXAMPLE",
+      emailAddress: "HARDCODED EMAIL",
+    });
+  };
+
   return (
     <div>
       <h1>form</h1>
@@ -39,7 +47,10 @@ function form() {
       <p>Name: </p>
       <p>Email Address: </p>
 
-      <button onClick={readData}>Read data</button>
+      <div>
+        <button onClick={readData}>Read data</button>
+        <button onClick={writeData}>Write data</button>
+      </div>
     </div>
   );
 }
