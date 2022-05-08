@@ -2,11 +2,25 @@ import React from "react";
 import { collection, getDocs, doc, getDoc } from "firebase/firestore";
 
 import { db } from "./_app";
+import { useEffect, useState } from "react";
+import { useMoralis } from "react-moralis";
 
 function form() {
+  const { authenticate, isAuthenticated, user, logout } = useMoralis();
+  const [address, setAddress] = useState();
+  useEffect(() => {
+    if (isAuthenticated) {
+      setAddress(user.attributes.ethAddress);
+    } else {
+      setAddress("");
+    }
+  }, [isAuthenticated]);
+
   const readData = async () => {
-    const walletAddress = "0x0B84BC8aA0B38F46EdD392B4F0270a870e30AFeF";
-    const docRef = doc(db, "wallets", walletAddress);
+    setAddress(user.attributes.ethAddress);
+    console.log(address);
+
+    const docRef = doc(db, "wallets", address);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
