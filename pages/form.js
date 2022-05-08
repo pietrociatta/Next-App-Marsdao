@@ -33,10 +33,14 @@ function form() {
   };
 
   const writeData = async () => {
-    await setDoc(doc(db, "wallets", "0xhardcoded"), {
-      name: "HARDCODED EXAMPLE",
-      emailAddress: "HARDCODED EMAIL",
-    });
+    if (isAuthenticated) {
+      await setDoc(doc(db, "wallets", address), {
+        name: "EXAMPLE",
+        emailAddress: "EMAIL",
+      });
+    } else {
+      alert("Can not write. Not authenticated");
+    }
   };
 
   return (
@@ -48,8 +52,8 @@ function form() {
       <p>Email Address: </p>
 
       <div>
-        <button onClick={readData}>Read data</button>
-        <button onClick={writeData}>Write data</button>
+        <button onClick={readData}>Read data (Dev purposes)</button>
+        <button onClick={writeData}>Update</button>
       </div>
     </div>
   );
