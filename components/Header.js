@@ -21,8 +21,8 @@ function Header() {
     }
   }, [isAuthenticated]);
   return (
-    <div>
-      <div class="navbar py-0 bg-white text-black">
+    <div className="">
+      <div class="navbar py-0 bg-white text-black ">
         <div class="navbar-start">
           <a
             onClick={showSidebar}

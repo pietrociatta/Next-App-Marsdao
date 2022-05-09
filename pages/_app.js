@@ -43,7 +43,10 @@ function MyApp({ Component, pageProps }) {
       serverUrl="https://u523xnt4tdsw.usemoralis.com:2053/server"
       appId="wAf1jovgfwudwTz9zP2BIvOoZXxP9bA541QeeHLk"
     >
-      <Header />
+      <div className="">
+        <Header />
+      </div>
+
       <Component {...pageProps} />
     </MoralisProvider>
   );

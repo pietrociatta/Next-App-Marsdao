@@ -70,43 +70,68 @@ function form() {
   };
 
   return (
-    <div>
-      <h1>form</h1>
+    <div className="bg-gray-50 h-screen">
+      <div className="pt-8 ">
+        <h1 className="text-center font-bold font-Poppins text-2xl text-black">
+          Profile
+        </h1>
 
-      <form className="max-w-md mx-auto ">
-        <input
-          className="w-full"
-          type="text"
-          placeholder="Name"
-          name="email"
-          value={Name}
-          onChange={(e) => setName(e.target.value)}
-        />
+        <form className="max-w-md mx-auto  ">
+          <div class="form-control ">
+            <label class="label">
+              <span class="label-text">Your Name</span>
+            </label>
+            <label class="input-group">
+              <span>Name</span>
+              <input
+                type="text"
+                placeholder="Mario"
+                value={Name}
+                onChange={(e) => setName(e.target.value)}
+                class="input w-full input-bordered"
+              />
+            </label>
+          </div>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Your Email</span>
+            </label>
+            <label class="input-group">
+              <span>Email</span>
+              <input
+                type="text"
+                placeholder="Mario@gmail.com"
+                value={Email}
+                onChange={(e) => setEmail(e.target.value)}
+                class="input w-full input-bordered"
+              />
+            </label>
+          </div>
 
-        <input
-          className="w-full"
-          type="text"
-          placeholder="Email"
-          name="email"
-          value={Email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          className="w-full"
-          type="text"
-          placeholder="Wallet"
-          name="wallet"
-          value={currentAddress}
-        />
-      </form>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Your Wallet</span>
+            </label>
+            <label class="input-group">
+              <span>Wallet</span>
+              <input
+                type="text"
+                placeholder="Mario"
+                value={currentAddress}
+                class="input w-full input-bordered"
+              />
+            </label>
+          </div>
+        </form>
 
-      <div className="flex gap-3 justify-center pt-3">
-        <button className="btn" onClick={readData}>
-          Read data (Dev purposes)
-        </button>
-        <button className="btn btn-primary" onClick={writeData}>
-          Update
-        </button>
+        <div className="flex gap-3 justify-center pt-8">
+          <button className="btn" onClick={readData}>
+            Read data (Dev purposes)
+          </button>
+          <button className="btn btn-primary" onClick={writeData}>
+            Update
+          </button>
+        </div>
       </div>
     </div>
   );
