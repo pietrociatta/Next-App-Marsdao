@@ -76,13 +76,10 @@ function form() {
           Profile
         </h1>
 
-        <form className="max-w-md mx-auto  ">
+        <form className="max-w-md mx-auto mt-4 p-4  ">
           <div class="form-control ">
-            <label class="label">
-              <span class="label-text">Your Name</span>
-            </label>
             <label class="input-group">
-              <span>Name</span>
+              <span className="min-w-[100px]  justify-center">Name</span>
               <input
                 type="text"
                 placeholder="Mario"
@@ -92,12 +89,9 @@ function form() {
               />
             </label>
           </div>
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Your Email</span>
-            </label>
+          <div class="form-control mt-3">
             <label class="input-group">
-              <span>Email</span>
+              <span className="min-w-[100px] justify-center">Email</span>
               <input
                 type="text"
                 placeholder="Mario@gmail.com"
@@ -109,11 +103,8 @@ function form() {
           </div>
 
           <div class="form-control">
-            <label class="label">
-              <span class="label-text">Your Wallet</span>
-            </label>
-            <label class="input-group">
-              <span>Wallet</span>
+            <label class="input-group mt-3">
+              <span className="min-w-[100px] justify-center">Wallet</span>
               <input
                 type="text"
                 placeholder="Mario"
@@ -124,11 +115,11 @@ function form() {
           </div>
         </form>
 
-        <div className="flex gap-3 justify-center pt-8">
+        <div className="sm:flex-row flex-col  w-full gap-3 text-center sm:justify-center pt-8">
           <button className="btn" onClick={readData}>
             Read data (Dev purposes)
           </button>
-          <button className="btn btn-primary" onClick={writeData}>
+          <button className="btn btn-primary mt-2 sm:mt-0" onClick={writeData}>
             Update
           </button>
         </div>
