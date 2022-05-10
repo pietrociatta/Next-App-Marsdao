@@ -7,22 +7,36 @@ import { GiConfirmed } from "react-icons/gi";
 
 import Abi from "../assets/abi.json";
 import { ethers } from "ethers";
+import { useEffect } from "react";
 const ContractAddress = "0x81D9a5927046F10415d8EC46717c2C7b9DA2dBF1";
 function MintSection() {
-  const { isAuthenticated, authenticate, enableWeb3, Moralis } = useMoralis();
+  const { isAuthenticated, authenticate, enableWeb3, Moralis, user } =
+    useMoralis();
   const [mintAmount, setMintAmount] = useState(1);
   const [progress, setProgress] = useState(false);
   const [confirmed, setCofirmed] = useState(false);
 
-  const initialize = async () => {
+  const [address, setAddress] = useState();
+  useEffect(() => {
     if (isAuthenticated) {
-      const web3Provider = await Moralis.enableWeb3();
-      const contract = new ethers.Contract(ContractAddress, Abi, web3Provider);
+      setAddress(user.attributes.ethAddress);
+    } else {
+      setAddress("");
     }
-  };
+  }, [isAuthenticated]);
+
+  // const initialize = async () => {
+  //   if (isAuthenticated) {
+  //     const web3Provider = await Moralis.enableWeb3();
+  //     const contract = new ethers.Contract(ContractAddress, Abi, web3Provider);
+  //   }
+  // };
 
   const publicMint = async () => {
-    const web3Provider = await Moralis.enableWeb3();
+    const web3Provider = await Moralis.enableWeb3({
+      provider: "walletconnect",
+    });
+    const contract = new ethers.Contract(ContractAddress, Abi, web3Provider);
     const options = {
       contractAddress: ContractAddress,
       functionName: "mint",
