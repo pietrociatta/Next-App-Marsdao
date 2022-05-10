@@ -28,12 +28,12 @@ module.exports = {
       accounts: [process.env.METAMASK_PRIVATE_KEY],
     },
     matic: {
-      url: "https://rpc-mumbai.maticvigil.com",
-      accounts: [process.env.POLYGONSCAN_API_KEY],
+      url: "https://rpc-mumbai.maticvigil.com", // Standard RPC Link
+      accounts: [process.env.METAMASK_PRIVATE_KEY],
     },
   },
   // https://coinsbench.com/verify-smart-contract-on-polygonscan-using-hardhat-9b8331dbd888
   etherscan: {
-    apiKey: process.env.ETHERSCAN_API_KEY,
+    apiKey: process.env.POLYGONSCAN_API_KEY,
   },
 };
