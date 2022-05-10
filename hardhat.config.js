@@ -18,6 +18,7 @@ module.exports = {
   paths: {
     artifacts: "./src/artifacts",
   },
+  defaultNetwork: "matic",
   networks: {
     hardhat: {
       chainId: 1337,
@@ -25,6 +26,10 @@ module.exports = {
     rinkeby: {
       url: "https://rinkeby.infura.io/v3/40e0064815cb4b7f9705bc8c4f1a5b87",
       accounts: [process.env.METAMASK_PRIVATE_KEY],
+    },
+    matic: {
+      url: "https://rpc-mumbai.maticvigil.com",
+      accounts: [process.env.POLYGONSCAN_API_KEY],
     },
   },
   // https://coinsbench.com/verify-smart-contract-on-polygonscan-using-hardhat-9b8331dbd888
