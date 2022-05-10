@@ -5,22 +5,24 @@ import Image from "next/image";
 import WalletConnect from "./WalletConnect";
 import { GiConfirmed } from "react-icons/gi";
 
-// import Abi from "../assets/abi.json";
+import Abi from "../assets/abi.json";
 import { ethers } from "ethers";
-const ContractAddress = "0xBafAFF27A800067fAA9b902A0e00d42188F25d71";
+const ContractAddress = "0x81D9a5927046F10415d8EC46717c2C7b9DA2dBF1";
 function MintSection() {
   const { isAuthenticated, authenticate, enableWeb3, Moralis } = useMoralis();
   const [mintAmount, setMintAmount] = useState(1);
   const [progress, setProgress] = useState(false);
   const [confirmed, setCofirmed] = useState(false);
-  //   const initialize = async () => {
-  //     if (isAuthenticated) {
-  //       const web3Provider = await Moralis.enableWeb3();
-  //       const contract = new ethers.Contract(ContractAddress, Abi, web3Provider);
-  //     }
-  //   };
+
+  const initialize = async () => {
+    if (isAuthenticated) {
+      const web3Provider = await Moralis.enableWeb3();
+      const contract = new ethers.Contract(ContractAddress, Abi, web3Provider);
+    }
+  };
 
   const publicMint = async () => {
+    const web3Provider = await Moralis.enableWeb3();
     const options = {
       contractAddress: ContractAddress,
       functionName: "mint",
@@ -38,6 +40,10 @@ function MintSection() {
     await transaction.wait(1).then((receipt) => {
       console.log(receipt);
       setCofirmed(true);
+      const timer = setTimeout(() => {
+        setProgress(false);
+        setCofirmed(false);
+      }, 3000);
     });
   };
 
@@ -113,12 +119,6 @@ function MintSection() {
                     />
                     <div class="modal">
                       <div class="modal-box relative text-center">
-                        <label
-                          for="my-modal-3"
-                          class="btn btn-sm btn-circle absolute right-2 top-2"
-                        >
-                          ✕
-                        </label>
                         {!confirmed ? (
                           <div>
                             <h1 className="text-center text-xl font-Poppins font-bold">
@@ -147,7 +147,10 @@ function MintSection() {
                     </div>
                   </div>
                 ) : (
-                  <button className="btn btn-wide bg-[#001EFF] text-white">
+                  <button
+                    onClick={publicMint}
+                    className="btn btn-wide bg-[#001EFF] text-white"
+                  >
                     Mint Now
                   </button>
                 )}
