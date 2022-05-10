@@ -128,7 +128,7 @@ function MintSection() {
                               When the Mint is finished this pop-up will close.
                             </p>
                             <div className="text-center">
-                              <progress class="progress progress-primary bg-black w-60"></progress>
+                              <progress className="progress progress-primary bg-black w-60"></progress>
                             </div>
                           </div>
                         ) : (
