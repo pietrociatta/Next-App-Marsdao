@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
+import Footer from "../components/Footer";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -43,11 +44,14 @@ function MyApp({ Component, pageProps }) {
       serverUrl="https://u523xnt4tdsw.usemoralis.com:2053/server"
       appId="wAf1jovgfwudwTz9zP2BIvOoZXxP9bA541QeeHLk"
     >
-      <div className="">
+      <div className="sticky top-0 z-50 shadow-md	">
         <Header />
       </div>
 
       <Component {...pageProps} />
+      <div className="">
+        <Footer />
+      </div>
     </MoralisProvider>
   );
 }

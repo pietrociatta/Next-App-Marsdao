@@ -5,7 +5,7 @@ import Hero from "../components/Hero";
 import Collections from "../components/Collections";
 import Guide from "../components/Guide";
 
-function Index() {
+function index() {
   const {
     authenticate,
     isAuthenticated,
@@ -33,4 +33,4 @@ function Index() {
   );
 }
 
-export default Index;
+export default index;

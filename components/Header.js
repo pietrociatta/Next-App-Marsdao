@@ -52,16 +52,23 @@ function Header() {
                 : "nav-menu flex-col"
             }
           >
-            <ul className="bg-white text-black w-full p-3 mb-auto   ">
+            <ul className=" text-black w-full p-3 mb-auto   ">
               <div className="mb-5">
                 <a onClick={showSidebar} className="btn btn-ghost btn-circle ">
                   X
                 </a>
               </div>
-              <li className="cursor-pointer ">
+              <li className="cursor-pointer " onClick={showSidebar}>
                 <Link href="/">
                   <h1 className="flex items-center font-Poppins mt-2 py-3 px-4 hover:text-white hover:bg-black text-base w-full gap-2 rounded-lg">
                     Home
+                  </h1>
+                </Link>
+              </li>
+              <li className="cursor-pointer " onClick={showSidebar}>
+                <Link href="/mint">
+                  <h1 className="flex items-center font-Poppins mt-2 py-3 px-4 hover:text-white hover:bg-black text-base w-full gap-2 rounded-lg">
+                    Mint
                   </h1>
                 </Link>
               </li>
@@ -81,7 +88,7 @@ function Header() {
             >
               <div>
                 <label className="btn btn-ghost btn-circle " tabIndex="0">
-                  <Blockie seed={address} />
+                  <Blockie className="rounded-full" seed={address} />
                 </label>
               </div>
             </div>

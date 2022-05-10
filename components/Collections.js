@@ -15,7 +15,7 @@ function Collections() {
         </p>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 lg:px-0 px-4">
           <div>
-            <CollectionItem image={Box1} name="Magical Flower" link="/form" />
+            <CollectionItem image={Box1} name="Magical Flower" link="/mint" />
           </div>
           <div>
             <CollectionItem image={Hidden} name="Available Soon" link="" />

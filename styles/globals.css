@@ -7,7 +7,7 @@
 @layer utilities {
   .nav-menu {
     width: 280px;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     position: fixed;
@@ -20,7 +20,7 @@
 
   .active {
     width: 280px;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     position: fixed;
