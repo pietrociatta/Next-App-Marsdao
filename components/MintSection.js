@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useMoralis } from "react-moralis";
 import HeroImage from "../assets/images/hero-image.png";
 import Image from "next/image";
@@ -8,8 +8,11 @@ import { GiConfirmed } from "react-icons/gi";
 import Abi from "../assets/abi.json";
 import { ethers } from "ethers";
 import { useEffect } from "react";
+import { WalletSelectionContext } from "./WalletSelectionContext";
+
 const ContractAddress = "0x81D9a5927046F10415d8EC46717c2C7b9DA2dBF1";
 function MintSection() {
+  const { value, setValue } = useContext(WalletSelectionContext);
   const { isAuthenticated, authenticate, enableWeb3, Moralis, user } =
     useMoralis();
   const [mintAmount, setMintAmount] = useState(1);
@@ -34,7 +37,7 @@ function MintSection() {
 
   const publicMint = async () => {
     const web3Provider = await Moralis.enableWeb3({
-      provider: "walletconnect",
+      provider: value,
     });
     const contract = new ethers.Contract(ContractAddress, Abi, web3Provider);
     const options = {

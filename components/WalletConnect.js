@@ -3,7 +3,10 @@ import { useMoralis } from "react-moralis";
 import MetamaskIcon from "../assets/images/metamask.svg";
 import Walletconnect from "../assets/images/walletconnect.svg";
 import Image from "next/image";
+import { useContext } from "react";
+import { WalletSelectionContext } from "./WalletSelectionContext";
 function WalletConnect() {
+  const { value, setValue } = useContext(WalletSelectionContext);
   const { authenticate, isAuthenticated, user, logout } = useMoralis();
   return (
     <div className="font-Poppins  ">
@@ -27,7 +30,10 @@ function WalletConnect() {
           <div className="grid md:grid-cols-2 grid-cols-1 justify-center gap-3 pt-4">
             <div
               className="btn  block h-fit py-4"
-              onClick={() => authenticate({ chainId: 137 })}
+              onClick={() => {
+                setValue("metamask");
+                authenticate({ chainId: 137 });
+              }}
             >
               <div className="pb-3">
                 <Image src={MetamaskIcon} alt="logo" width={50} height={50} />
@@ -38,9 +44,10 @@ function WalletConnect() {
             </div>
             <div
               className="btn  block h-fit py-4"
-              onClick={() =>
-                authenticate({ provider: "walletconnect", chainId: 137 })
-              }
+              onClick={() => {
+                setValue("walletconnect");
+                authenticate({ provider: "walletconnect", chainId: 137 });
+              }}
             >
               <div className="pb-3">
                 <Image src={Walletconnect} alt="logo" width={50} height={50} />
