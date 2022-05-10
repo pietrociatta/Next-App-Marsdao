@@ -1,18 +1,11 @@
 import React from "react";
-import { useMoralis } from "react-moralis";
+
 import Hero from "../components/Hero";
 
 import Collections from "../components/Collections";
 import Guide from "../components/Guide";
 
 function index() {
-  const {
-    authenticate,
-    isAuthenticated,
-
-    user,
-    logout,
-  } = useMoralis();
   return (
     <div className="bg-white">
       <div className="bg-black  mx-auto">
