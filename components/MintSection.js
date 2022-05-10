@@ -3,9 +3,43 @@ import { useMoralis } from "react-moralis";
 import HeroImage from "../assets/images/hero-image.png";
 import Image from "next/image";
 import WalletConnect from "./WalletConnect";
+import { GiConfirmed } from "react-icons/gi";
+
+// import Abi from "../assets/abi.json";
+import { ethers } from "ethers";
+const ContractAddress = "0xBafAFF27A800067fAA9b902A0e00d42188F25d71";
 function MintSection() {
-  const { isAuthenticated, authenticate } = useMoralis();
+  const { isAuthenticated, authenticate, enableWeb3, Moralis } = useMoralis();
   const [mintAmount, setMintAmount] = useState(1);
+  const [progress, setProgress] = useState(false);
+  const [confirmed, setCofirmed] = useState(false);
+  //   const initialize = async () => {
+  //     if (isAuthenticated) {
+  //       const web3Provider = await Moralis.enableWeb3();
+  //       const contract = new ethers.Contract(ContractAddress, Abi, web3Provider);
+  //     }
+  //   };
+
+  const publicMint = async () => {
+    const options = {
+      contractAddress: ContractAddress,
+      functionName: "mint",
+      abi: Abi,
+      msgValue: ethers.utils
+        .parseEther((0.001 * mintAmount).toString())
+        .toString(),
+      params: {
+        _mintAmount: mintAmount,
+      },
+    };
+
+    const transaction = await Moralis.executeFunction(options);
+    setProgress(true);
+    await transaction.wait(1).then((receipt) => {
+      console.log(receipt);
+      setCofirmed(true);
+    });
+  };
 
   const handleDecrement = () => {
     if (mintAmount <= 1) return;
@@ -69,9 +103,54 @@ function MintSection() {
             </div>
             {isAuthenticated ? (
               <div className="flex justify-center gap-3 mt-6 lg:mt-6 lg:justify-start">
-                <button className="btn btn-wide bg-[#001EFF] text-white">
-                  Mint Now
-                </button>
+                {progress ? (
+                  <div className="mt-8">
+                    <input
+                      type="checkbox"
+                      checked={progress ? true : false}
+                      id="my-modal-3"
+                      class="modal-toggle"
+                    />
+                    <div class="modal">
+                      <div class="modal-box relative text-center">
+                        <label
+                          for="my-modal-3"
+                          class="btn btn-sm btn-circle absolute right-2 top-2"
+                        >
+                          ✕
+                        </label>
+                        {!confirmed ? (
+                          <div>
+                            <h1 className="text-center text-xl font-Poppins font-bold">
+                              WAIT! WE ARE MINTING YOUR NFT...
+                            </h1>
+                            <p className="text-xs pt-2 pb-2">
+                              When the Mint is finished this pop-up will close.
+                            </p>
+                            <div className="text-center">
+                              <progress class="progress progress-primary bg-black w-60"></progress>
+                            </div>
+                          </div>
+                        ) : (
+                          <div>
+                            <div className="flex justify-center ">
+                              <GiConfirmed size={90} color="green" />
+                            </div>
+                            <div>
+                              <h1 className="text-center text-xl font-Poppins font-bold pt-2">
+                                TRANSACTION SUCCESFUL!
+                              </h1>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <button className="btn btn-wide bg-[#001EFF] text-white">
+                    Mint Now
+                  </button>
+                )}
               </div>
             ) : (
               <div className="flex lg:justify-start justify-center mt-4">
