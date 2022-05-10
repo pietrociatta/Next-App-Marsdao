@@ -117,8 +117,8 @@ function MintSection() {
                       id="my-modal-3"
                       class="modal-toggle"
                     />
-                    <div class="modal">
-                      <div class="modal-box relative text-center">
+                    <div className="modal">
+                      <div className="modal-box relative text-center">
                         {!confirmed ? (
                           <div>
                             <h1 className="text-center text-xl font-Poppins font-bold">
@@ -128,7 +128,7 @@ function MintSection() {
                               When the Mint is finished this pop-up will close.
                             </p>
                             <div className="text-center">
-                              <progress class="progress progress-primary bg-black w-60"></progress>
+                              <progress className="progress progress-primary bg-black w-60"></progress>
                             </div>
                           </div>
                         ) : (
