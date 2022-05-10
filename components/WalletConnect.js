@@ -7,7 +7,7 @@ function WalletConnect() {
   const { authenticate, isAuthenticated, user, logout } = useMoralis();
   return (
     <div className="font-Poppins  ">
-      <label for="my-modal-3" className="btn w-full  modal-button">
+      <label htmlFor="my-modal-3" className="btn w-full  modal-button">
         Connect
       </label>
 
@@ -16,7 +16,7 @@ function WalletConnect() {
       <div className="modal">
         <div className="modal-box  relative">
           <label
-            for="my-modal-3"
+            htmlFor="my-modal-3"
             className="btn btn-sm btn-circle absolute right-2 top-2"
           >
             ✕

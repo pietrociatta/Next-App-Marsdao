@@ -22,24 +22,24 @@ function Header() {
   }, [isAuthenticated]);
   return (
     <div className="">
-      <div class="navbar py-0 bg-white text-black ">
-        <div class="navbar-start">
+      <div className="navbar py-0 bg-white text-black ">
+        <div className="navbar-start">
           <a
             onClick={showSidebar}
-            tabindex="0"
-            class="btn btn-ghost  btn-circle"
+            tabIndex="0"
+            className="btn btn-ghost  btn-circle"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
+              className="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M4 6h16M4 12h16M4 18h7"
               />
             </svg>
@@ -65,21 +65,14 @@ function Header() {
                   </h1>
                 </Link>
               </li>
-              <li className="cursor-pointer">
-                <Link href="/form">
-                  <h1 className="flex items-center font-Poppins mt-2 py-3 px-4 hover:text-white hover:bg-black text-base w-full gap-2 rounded-lg">
-                    Form
-                  </h1>
-                </Link>
-              </li>
             </ul>
             <div className="mt-auto px-3 mb-3">
               {!isAuthenticated && <WalletConnect />}
             </div>
           </nav>
         </div>
-        <div class="navbar-center">
-          <a class="btn btn-ghost normal-case text-xl">MarsDAO</a>
+        <div className="navbar-center">
+          <a className="btn btn-ghost normal-case text-xl">MarsDAO</a>
         </div>
         <div className="navbar-end ">
           <div className="dropdown   dropdown-end ">
@@ -87,7 +80,7 @@ function Header() {
               className={isAuthenticated ? "avatar  online" : "avatar  offline"}
             >
               <div>
-                <label className="btn btn-ghost btn-circle " tabindex="0">
+                <label className="btn btn-ghost btn-circle " tabIndex="0">
                   <Blockie seed={address} />
                 </label>
               </div>
@@ -95,14 +88,18 @@ function Header() {
             {isAuthenticated && (
               <div>
                 <ul
-                  tabindex="0"
+                  tabIndex="0"
                   className="dropdown-content menu mt-0 p-2  bg-white rounded-b-xl w-52"
                 >
                   <li>
-                    <a className="font-Poppins">
-                      <FiUser />
-                      Profile
-                    </a>
+                    <Link href="/form">
+                      <div className="">
+                        <a className="font-Poppins flex gap-3 items-center">
+                          <FiUser />
+                          Profile
+                        </a>
+                      </div>
+                    </Link>
                   </li>
                   <li>
                     <a className="font-Poppins" onClick={logout}>

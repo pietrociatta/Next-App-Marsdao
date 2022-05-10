@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { useMoralis } from "react-moralis";
 import { useForm } from "react-hook-form";
 
-function form() {
+function Form() {
   const { authenticate, isAuthenticated, user, logout } = useMoralis();
   const [address, setAddress] = useState();
 
@@ -77,39 +77,39 @@ function form() {
         </h1>
 
         <form className="max-w-md mx-auto mt-4 p-4  ">
-          <div class="form-control ">
-            <label class="input-group">
+          <div className="form-control ">
+            <label className="input-group">
               <span className="min-w-[100px]  justify-center">Name</span>
               <input
                 type="text"
                 placeholder="Mario"
                 value={Name}
                 onChange={(e) => setName(e.target.value)}
-                class="input w-full input-bordered"
+                className="input w-full input-bordered"
               />
             </label>
           </div>
-          <div class="form-control mt-3">
-            <label class="input-group">
+          <div className="form-control mt-3">
+            <label className="input-group">
               <span className="min-w-[100px] justify-center">Email</span>
               <input
                 type="text"
                 placeholder="Mario@gmail.com"
                 value={Email}
                 onChange={(e) => setEmail(e.target.value)}
-                class="input w-full input-bordered"
+                className="input w-full input-bordered"
               />
             </label>
           </div>
 
-          <div class="form-control">
-            <label class="input-group mt-3">
+          <div className="form-control">
+            <label className="input-group mt-3">
               <span className="min-w-[100px] justify-center">Wallet</span>
               <input
                 type="text"
                 placeholder="Mario"
                 value={currentAddress}
-                class="input w-full input-bordered"
+                className="input w-full input-bordered"
               />
             </label>
           </div>
@@ -128,4 +128,4 @@ function form() {
   );
 }
 
-export default form;
+export default Form;
