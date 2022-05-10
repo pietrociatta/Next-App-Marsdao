@@ -28,7 +28,7 @@ module.exports = {
       accounts: [process.env.METAMASK_PRIVATE_KEY],
     },
     matic: {
-      url: "https://rpc-mumbai.maticvigil.com", // Standard RPC Link
+      url: "https://polygon-mumbai.infura.io/v3/e122dd2881bc43e1a8595ff472c56106", // Standard RPC Link
       accounts: [process.env.METAMASK_PRIVATE_KEY],
     },
   },
