@@ -7,6 +7,8 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 import Footer from "../components/Footer";
+import { WalletSelectionContext } from "../components/WalletSelectionContext";
+import { useState } from "react";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -40,19 +42,24 @@ if (firebaseConfig?.projectId) {
 }
 
 function MyApp({ Component, pageProps }) {
+  const [value, setValue] = useState("Metamask");
+
   return (
     <MoralisProvider
       serverUrl="https://u523xnt4tdsw.usemoralis.com:2053/server"
       appId="wAf1jovgfwudwTz9zP2BIvOoZXxP9bA541QeeHLk"
     >
-      <div className="sticky top-0 z-50 shadow-md	">
-        <Header />
-      </div>
+      <WalletSelectionContext.Provider value={{ value, setValue }}>
+        <div className="sticky top-0 z-50 shadow-md	">
+          <Header />
+        </div>
 
-      <Component {...pageProps} />
-      <div className="">
-        <Footer />
-      </div>
+        <Component {...pageProps} />
+
+        <div className="">
+          <Footer />
+        </div>
+      </WalletSelectionContext.Provider>
     </MoralisProvider>
   );
 }
