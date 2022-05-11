@@ -4,7 +4,7 @@ function Footer() {
   return (
     <div>
       <footer className="footer items-center justify-between flex p-4 bg-white text-black border-t-[1px] border-gray-200">
-        <div className="items-center grid-flow-col">
+        <div className="items-center grid-flow-col text-xs">
           <p>Copyright © 2022 - All right reserved</p>
         </div>
         <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">

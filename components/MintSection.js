@@ -9,6 +9,7 @@ import { ethers } from "ethers";
 import { useEffect } from "react";
 import { WalletSelectionContext } from "./WalletSelectionContext";
 import Tracker from "./Tracker";
+import { ImPriceTag } from "react-icons/im";
 
 const ContractAddress = "0x6F6990f844e2Ddb8B84DFCF8d08e60EDc32fb4D7";
 
@@ -104,13 +105,17 @@ function MintSection() {
     setMintAmount(mintAmount + 1);
   };
   return (
-    <div className="h-full">
+    <div className="h-full overflow-hidden">
       <div className="lg:py-10 py-5 lg:mx-10">
         <div className="lg:flex justify-center   ">
-          <div className="lg:w-1/2 w-full flex justify-center p-5 lg:p-0  ">
-            <Image src={HeroImage} alt="" className="mx-auto w-full  p-5 " />
+          <div className="lg:w-1/2 w-full flex lg:justify-start md:justify-center  p-5  lg:p-0  ">
+            <Image
+              src={HeroImage}
+              alt=""
+              className="mx-auto w-full rounded-xl   "
+            />
           </div>
-          <div className="p-5 lg:p-0 lg:pl-8 w-full  lg:w-1/2 ">
+          <div className="p-5 lg:p-0 lg:ml-8 md:max-w-lg mx-auto  w-full  lg:w-1/2 ">
             <h1 className="font-Poppins text-2xl font-semibold text-black text-center lg:text-left lg:text-4xl  ">
               Magical Flower
             </h1>
@@ -131,7 +136,7 @@ function MintSection() {
                 <input
                   value={mintAmount}
                   type="number"
-                  className="bg-white border-[1px] input w-1/2 lg:w-1/3   border-gray-200 text-black text-center rounded-lg mx-2"
+                  className="bg-white border-[1px] input w-full lg:w-1/3   border-gray-200 text-black text-center rounded-lg mx-2"
                 />
                 <button
                   className="bg-black btn text-white rounded-lg px-5 "
@@ -142,10 +147,10 @@ function MintSection() {
               </div>
             </div>
             <div>
-              <p className="font-Poppins text-[20px] font-normal text-black   mt-3 text-center lg:text-left lg:text-[20px] lg:mt-3">
+              <p className="font-Poppins text-[20px] font-normal text-black   mt-5 text-left lg:text-[20px] lg:mt-3">
                 Description
               </p>
-              <p className="font-Poppins text-[15px] font-normal text-black   mt-3 text-center lg:text-left lg:text-[15px] lg:mt-3">
+              <p className="font-Poppins text-[15px] font-normal text-black lg:pr-8  mt-3 text-left lg:text-[15px] lg:mt-3">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
@@ -153,6 +158,7 @@ function MintSection() {
                 printing and typesetting industry. Lorem Ipsum has been the
                 industry's standard dummy text.
               </p>
+              <div className="w-full h-[1px] bg-gray-200 mt-3"></div>
             </div>
             {isAuthenticated ? (
               <div className="flex justify-center gap-3 mt-6 lg:mt-6 lg:justify-start">
@@ -198,18 +204,19 @@ function MintSection() {
                     onClick={publicMint}
                     className="btn btn-wide bg-[#001EFF] text-white"
                   >
+                    <ImPriceTag size={15} className="mr-2" />
                     Mint Now
                   </button>
                 )}
               </div>
             ) : (
-              <div className="flex lg:justify-start justify-center mt-4">
+              <div className="flex  lg:justify-start justify-center mt-4">
                 <WalletConnect />
               </div>
             )}
           </div>
         </div>
-        <div className="max-w-screen-xl p-5 bg-gray-50 mx-auto">
+        <div className="max-w-screen-xl lg:mt-10 p-5 lg:p-0 bg-gray-50 mx-auto">
           <Tracker events={nftowner} />
         </div>
       </div>

@@ -1,8 +1,9 @@
 import React from "react";
+import { ImPriceTag } from "react-icons/im";
 
 function Tracker({ events }) {
   return (
-    <div className="bg-white rounded-xl p-2 mt-3">
+    <div className="bg-white rounded-xl p-2 mt-3 shadow-md">
       <div className="h-[300px]  font-Poppins text-base  ">
         <div className="flex justify-between sticky top-0 px-2  text-black bg-white py-2 ">
           <div>
@@ -18,11 +19,27 @@ function Tracker({ events }) {
               key={index}
               className="flex justify-between py-2 items-center border-b-[2px] border-gray-50"
             >
-              <div className="flex md:hidden">
-                {event.owner_of.slice(0, 7) + "..." + event.owner_of.slice(-3)}
+              <div className="flex md:hidden space-x-2 items-center ">
+                <div>
+                  <ImPriceTag fontSize={20} className="text-gray-300" />
+                </div>
+                <div>
+                  {event.owner_of.slice(0, 7) +
+                    "..." +
+                    event.owner_of.slice(-3)}
+                </div>
               </div>
-              <div className="hidden md:flex">{event.owner_of}</div>
-              <div className="mr-2">{event.synced_at}</div>
+              <div className="hidden md:flex space-x-2 items-center">
+                <div>
+                  <ImPriceTag fontSize={20} className="text-gray-300" />
+                </div>
+                <div>{event.owner_of}</div>
+              </div>
+              <div className="mr-2">
+                {event.synced_at.slice(5, 10) +
+                  " " +
+                  event.synced_at.slice(11, 16)}
+              </div>
             </div>
           ))}
         </div>

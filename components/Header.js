@@ -1,12 +1,13 @@
 import React from "react";
 import WalletConnect from "./WalletConnect";
 import { FiUser, FiLogOut } from "react-icons/fi";
-import { AiOutlineHome } from "react-icons/ai";
+import { AiFillHome } from "react-icons/ai";
 import { BiUserCircle } from "react-icons/bi";
 import { useState, useEffect } from "react";
 import { useMoralis } from "react-moralis";
 import { Blockie } from "web3uikit";
 import Link from "next/link";
+import { ImPriceTag } from "react-icons/im";
 
 function Header() {
   const [sidebar, setSidebar] = useState(false);
@@ -64,17 +65,23 @@ function Header() {
                   X
                 </a>
               </div>
-              <li className="cursor-pointer " onClick={showSidebar}>
+              <li
+                className="cursor-pointer  border-b-[1px] border-gray-100 "
+                onClick={showSidebar}
+              >
                 <Link href="/">
                   <h1 className="flex items-center font-Poppins mt-2 py-3 px-4 hover:text-white hover:bg-black text-base w-full gap-2 rounded-lg">
-                    Home
+                    <AiFillHome /> Home
                   </h1>
                 </Link>
               </li>
-              <li className="cursor-pointer " onClick={showSidebar}>
+              <li
+                className="cursor-pointer border-b-[1px] border-gray-100 "
+                onClick={showSidebar}
+              >
                 <Link href="/mint">
                   <h1 className="flex items-center font-Poppins mt-2 py-3 px-4 hover:text-white hover:bg-black text-base w-full gap-2 rounded-lg">
-                    Mint
+                    <ImPriceTag size={18} /> Mint
                   </h1>
                 </Link>
               </li>
@@ -88,7 +95,7 @@ function Header() {
           <a className="btn btn-ghost normal-case text-xl">MarsDAO</a>
         </div>
         <div className="navbar-end ">
-          <div>{formattedAccount}</div>
+          <div className="text-xs ">{formattedAccount}</div>
           <div className="dropdown   dropdown-end ">
             <div
               className={isAuthenticated ? "avatar  online" : "avatar  offline"}

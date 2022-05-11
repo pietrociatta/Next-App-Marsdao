@@ -5,13 +5,21 @@ import Walletconnect from "../assets/images/walletconnect.svg";
 import Image from "next/image";
 import { useContext } from "react";
 import { WalletSelectionContext } from "./WalletSelectionContext";
+import { IoWallet } from "react-icons/io5";
+
 function WalletConnect() {
   const { value, setValue } = useContext(WalletSelectionContext);
   const { authenticate, isAuthenticated, user, logout } = useMoralis();
   return (
     <div className="font-Poppins  ">
-      <label htmlFor="my-modal-3" className="btn w-full  modal-button">
-        Connect
+      <label
+        htmlFor="my-modal-3"
+        className="btn  w-full  bg-[#001EFF] text-white modal-button"
+      >
+        <span>
+          <IoWallet size={25} className="mr-2" />
+        </span>
+        Connect Wallet
       </label>
 
       <input type="checkbox" id="my-modal-3" className="modal-toggle " />
