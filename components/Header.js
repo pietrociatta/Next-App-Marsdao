@@ -13,11 +13,17 @@ function Header() {
   const { authenticate, isAuthenticated, user, logout } = useMoralis();
   const showSidebar = () => setSidebar(!sidebar);
   const [address, setAddress] = useState();
+  const [formattedAccount, setformattedAccount] = useState("");
+
   useEffect(() => {
     if (isAuthenticated) {
-      setAddress(user.attributes.ethAddress);
+      const indirizzo = user.attributes.ethAddress;
+      setAddress(indirizzo);
+      let format = indirizzo.slice(0, 4) + "..." + indirizzo.slice(-3);
+      setformattedAccount(format);
     } else {
       setAddress("");
+      setformattedAccount("");
     }
   }, [isAuthenticated]);
   return (
@@ -82,6 +88,7 @@ function Header() {
           <a className="btn btn-ghost normal-case text-xl">MarsDAO</a>
         </div>
         <div className="navbar-end ">
+          <div>{formattedAccount}</div>
           <div className="dropdown   dropdown-end ">
             <div
               className={isAuthenticated ? "avatar  online" : "avatar  offline"}

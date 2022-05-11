@@ -1,4 +1,4 @@
-import { MoralisProvider } from "react-moralis";
+import { MoralisProvider, useMoralis } from "react-moralis";
 import "../styles/globals.css";
 import Header from "../components/Header";
 
@@ -42,7 +42,7 @@ if (firebaseConfig?.projectId) {
 }
 
 function MyApp({ Component, pageProps }) {
-  const [value, setValue] = useState("Metamask");
+  const [value, setValue] = useState("metamask");
 
   return (
     <MoralisProvider

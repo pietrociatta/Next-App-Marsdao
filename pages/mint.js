@@ -3,7 +3,7 @@ import MintSection from "../components/MintSection";
 
 function Mint() {
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-50 h-screen">
       <div className="bg-black text-center py-8 ">
         <h1 className="font-Poppins text-2xl font-semibold text-white  lg:text-4xl">
           MINT

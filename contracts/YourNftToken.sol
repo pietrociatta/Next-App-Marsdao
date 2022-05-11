@@ -27,6 +27,8 @@ contract YourNftToken is ERC721A, Ownable, ReentrancyGuard {
     bool public whitelistMintEnabled = false;
     bool public revealed = false;
 
+    event MintTracker(address indexed _from, uint256 time,  uint256 _value);
+
     // ======== 2. Modifiers =========
 
     modifier mintCompliance(uint256 _mintAmount) {
@@ -97,6 +99,7 @@ contract YourNftToken is ERC721A, Ownable, ReentrancyGuard {
         require(!paused, "The contract is paused!");
 
         _safeMint(_msgSender(), _mintAmount);
+        emit MintTracker(msg.sender, block.timestamp, msg.value);
     }
 
     function mintForAddress(uint256 _mintAmount, address _receiver)

@@ -108,6 +108,7 @@ function Form() {
               <input
                 type="text"
                 placeholder="Mario"
+                readOnly={true}
                 value={currentAddress}
                 className="input w-full input-bordered"
               />

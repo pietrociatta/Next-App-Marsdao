@@ -9,8 +9,9 @@ import Abi from "../assets/abi.json";
 import { ethers } from "ethers";
 import { useEffect } from "react";
 import { WalletSelectionContext } from "./WalletSelectionContext";
+import Tracker from "./Tracker";
 
-const ContractAddress = "0x81D9a5927046F10415d8EC46717c2C7b9DA2dBF1";
+const ContractAddress = "0x6F6990f844e2Ddb8B84DFCF8d08e60EDc32fb4D7";
 function MintSection() {
   const { value, setValue } = useContext(WalletSelectionContext);
   const { isAuthenticated, authenticate, enableWeb3, Moralis, user } =
@@ -18,15 +19,35 @@ function MintSection() {
   const [mintAmount, setMintAmount] = useState(1);
   const [progress, setProgress] = useState(false);
   const [confirmed, setCofirmed] = useState(false);
+  const [emit, setEmit] = useState([]);
 
   const [address, setAddress] = useState();
+
+  const listEvents = async () => {
+    const web3Provider = await Moralis.enableWeb3({
+      provider: value,
+    });
+    console.log(value);
+    const contract = new ethers.Contract(ContractAddress, Abi, web3Provider);
+    let eventFilter = contract.filters.MintTracker();
+    let events = await contract.queryFilter(eventFilter);
+
+    console.log(events);
+    const hash = events.transactionHash;
+    setEmit(events);
+  };
+
   useEffect(() => {
+    initialize();
+  }, [isAuthenticated]);
+
+  const initialize = async () => {
     if (isAuthenticated) {
       setAddress(user.attributes.ethAddress);
     } else {
       setAddress("");
     }
-  }, [isAuthenticated]);
+  };
 
   // const initialize = async () => {
   //   if (isAuthenticated) {
@@ -123,6 +144,10 @@ function MintSection() {
                 printing and typesetting industry. Lorem Ipsum has been the
                 industry's standard dummy text.
               </p>
+              <div>
+                <button onClick={listEvents}>REFRESH</button>
+              </div>
+              <Tracker events={emit} />
             </div>
             {isAuthenticated ? (
               <div className="flex justify-center gap-3 mt-6 lg:mt-6 lg:justify-start">
