@@ -2,12 +2,31 @@ import React from "react";
 
 function Tracker({ events }) {
   return (
-    <div className="h-300px overflow-y-scroll">
-      {events.map((event, index) => (
-        <div key={index}>
-          <div>{event.args[0]}</div>
+    <div className="bg-white rounded-xl p-2 mt-3">
+      <div className="h-[300px]  font-Poppins text-base  ">
+        <div className="flex justify-between sticky top-0 px-2  text-black bg-white py-2 ">
+          <div>
+            <h1>Owners</h1>
+          </div>
+          <div className="mr-2">
+            <h1>Time</h1>
+          </div>
         </div>
-      ))}
+        <div className="px-2 text-xs lg:text-base overflow-auto h-[240px] ">
+          {events.map((event, index) => (
+            <div
+              key={index}
+              className="flex justify-between py-2 items-center border-b-[2px] border-gray-50"
+            >
+              <div className="flex md:hidden">
+                {event.owner_of.slice(0, 7) + "..." + event.owner_of.slice(-3)}
+              </div>
+              <div className="hidden md:flex">{event.owner_of}</div>
+              <div className="mr-2">{event.synced_at}</div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

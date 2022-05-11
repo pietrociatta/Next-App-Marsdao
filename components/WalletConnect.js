@@ -32,7 +32,7 @@ function WalletConnect() {
               className="btn  block h-fit py-4"
               onClick={() => {
                 setValue("metamask");
-                authenticate({ chainId: 137 });
+                authenticate({ chainId: 80001 });
               }}
             >
               <div className="pb-3">
@@ -46,7 +46,7 @@ function WalletConnect() {
               className="btn  block h-fit py-4"
               onClick={() => {
                 setValue("walletconnect");
-                authenticate({ provider: "walletconnect", chainId: 137 });
+                authenticate({ provider: "walletconnect", chainId: 80001 });
               }}
             >
               <div className="pb-3">

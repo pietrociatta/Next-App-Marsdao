@@ -46,8 +46,8 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <MoralisProvider
-      serverUrl="https://u523xnt4tdsw.usemoralis.com:2053/server"
-      appId="wAf1jovgfwudwTz9zP2BIvOoZXxP9bA541QeeHLk"
+      serverUrl="https://voc5g0aiyxwi.usemoralis.com:2053/server"
+      appId="SjVqq5itSzlTOPQF8x0R5vyyjYnbJF0I3HSzcfTa"
     >
       <WalletSelectionContext.Provider value={{ value, setValue }}>
         <div className="sticky top-0 z-50 shadow-md	">

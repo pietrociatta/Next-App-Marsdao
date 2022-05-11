@@ -4,7 +4,6 @@ import HeroImage from "../assets/images/hero-image.png";
 import Image from "next/image";
 import WalletConnect from "./WalletConnect";
 import { GiConfirmed } from "react-icons/gi";
-
 import Abi from "../assets/abi.json";
 import { ethers } from "ethers";
 import { useEffect } from "react";
@@ -12,29 +11,42 @@ import { WalletSelectionContext } from "./WalletSelectionContext";
 import Tracker from "./Tracker";
 
 const ContractAddress = "0x6F6990f844e2Ddb8B84DFCF8d08e60EDc32fb4D7";
+
 function MintSection() {
+  //context useState
   const { value, setValue } = useContext(WalletSelectionContext);
-  const { isAuthenticated, authenticate, enableWeb3, Moralis, user } =
-    useMoralis();
+
+  //auth
+  const {
+    isAuthenticated,
+    authenticate,
+    enableWeb3,
+    Moralis,
+    user,
+    isWeb3Enabled,
+  } = useMoralis();
+
+  //mint
   const [mintAmount, setMintAmount] = useState(1);
+  //transcation pending
   const [progress, setProgress] = useState(false);
+  //transaction confirmed
   const [confirmed, setCofirmed] = useState(false);
-  const [emit, setEmit] = useState([]);
+  //Mint event storage
+  const [nftowner, setnftowner] = useState([]);
 
   const [address, setAddress] = useState();
 
-  const listEvents = async () => {
-    const web3Provider = await Moralis.enableWeb3({
-      provider: value,
-    });
-    console.log(value);
-    const contract = new ethers.Contract(ContractAddress, Abi, web3Provider);
-    let eventFilter = contract.filters.MintTracker();
-    let events = await contract.queryFilter(eventFilter);
-
-    console.log(events);
-    const hash = events.transactionHash;
-    setEmit(events);
+  const getNft = async () => {
+    if (isAuthenticated) {
+      const options = {
+        chain: "mumbai",
+        token_address: ContractAddress,
+      };
+      const nftOwners = await Moralis.Web3API.token.getNFTOwners(options);
+      setnftowner(nftOwners.result);
+      console.log(nftowner);
+    }
   };
 
   useEffect(() => {
@@ -49,12 +61,9 @@ function MintSection() {
     }
   };
 
-  // const initialize = async () => {
-  //   if (isAuthenticated) {
-  //     const web3Provider = await Moralis.enableWeb3();
-  //     const contract = new ethers.Contract(ContractAddress, Abi, web3Provider);
-  //   }
-  // };
+  useEffect(() => {
+    getNft();
+  }, [isAuthenticated]);
 
   const publicMint = async () => {
     const web3Provider = await Moralis.enableWeb3({
@@ -95,7 +104,7 @@ function MintSection() {
     setMintAmount(mintAmount + 1);
   };
   return (
-    <div>
+    <div className="h-full">
       <div className="lg:py-10 py-5 lg:mx-10">
         <div className="lg:flex justify-center   ">
           <div className="lg:w-1/2 w-full flex justify-center p-5 lg:p-0  ">
@@ -144,10 +153,6 @@ function MintSection() {
                 printing and typesetting industry. Lorem Ipsum has been the
                 industry's standard dummy text.
               </p>
-              <div>
-                <button onClick={listEvents}>REFRESH</button>
-              </div>
-              <Tracker events={emit} />
             </div>
             {isAuthenticated ? (
               <div className="flex justify-center gap-3 mt-6 lg:mt-6 lg:justify-start">
@@ -203,6 +208,9 @@ function MintSection() {
               </div>
             )}
           </div>
+        </div>
+        <div className="max-w-screen-xl p-5 bg-gray-50 mx-auto">
+          <Tracker events={nftowner} />
         </div>
       </div>
     </div>
