@@ -36,9 +36,11 @@ function Tracker({ events }) {
                 <div>{event.owner_of}</div>
               </div>
               <div className="mr-2">
-                {event.synced_at.slice(5, 10) +
+                {event.synced_at}
+
+                {/* {event.synced_at.slice(5, 10) +
                   " " +
-                  event.synced_at.slice(11, 16)}
+                  event.synced_at.slice(11, 16)} */}
               </div>
             </div>
           ))}

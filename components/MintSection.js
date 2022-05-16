@@ -85,9 +85,10 @@ function MintSection() {
 
     const transaction = await Moralis.executeFunction(options);
     setProgress(true);
-    await transaction.wait(1).then((receipt) => {
+    await transaction.wait(2).then((receipt) => {
       console.log(receipt);
       setCofirmed(true);
+      getNft();
       const timer = setTimeout(() => {
         setProgress(false);
         setCofirmed(false);

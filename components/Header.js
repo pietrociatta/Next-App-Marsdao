@@ -53,7 +53,7 @@ function Header() {
           </a>
 
           <nav
-            className={
+            className={ 
               sidebar
                 ? "nav-menu active flex-col  bg-white"
                 : "nav-menu flex-col"
