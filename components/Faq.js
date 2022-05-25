@@ -14,7 +14,7 @@ function Faq() {
       <div className="flex flex-col gap-y-4">
         <div
           tabIndex="0"
-          class="collapse collapse-plus border border-[#E7E7E7] text-black bg-[#F5F5F5] rounded-box"
+          className="collapse collapse-plus border border-[#E7E7E7] text-black bg-[#F5F5F5] rounded-box"
         >
           <div className="collapse-title text-xl font-medium">
             How to buy Nfts?
