@@ -27,12 +27,14 @@
     "react-router-dom": "^6.3.0",
     "react-switch": "^6.0.0",
     "react-use-etherscan": "^0.1.0-alpha.4",
+    "swiper": "^8.1.5",
     "web3uikit": "^0.1.140"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.5",
     "@nomiclabs/hardhat-etherscan": "^3.0.3",
     "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "@zeit/next-css": "^1.0.1",
     "autoprefixer": "^10.4.7",
     "chai": "^4.3.6",
     "eslint": "8.15.0",

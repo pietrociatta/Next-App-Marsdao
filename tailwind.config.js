@@ -8,6 +8,9 @@ module.exports = {
       fontFamily: {
         Poppins: ["Poppins", "sans-serif"],
       },
+      backgroundImage: {
+        slide1: "url('../assets/images/card1.png')",
+      },
     },
   },
   plugins: [require("daisyui")],

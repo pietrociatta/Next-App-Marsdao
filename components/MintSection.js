@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import { WalletSelectionContext } from "./WalletSelectionContext";
 import Tracker from "./Tracker";
 import { ImPriceTag } from "react-icons/im";
+import MintSwiper from "./MintSwiper";
 
 const ContractAddress = "0x6F6990f844e2Ddb8B84DFCF8d08e60EDc32fb4D7";
 
@@ -217,7 +218,10 @@ function MintSection() {
             )}
           </div>
         </div>
-        <div className="max-w-screen-xl lg:mt-10 p-5 lg:p-0 bg-gray-50 mx-auto">
+        <div>
+          <MintSwiper />
+        </div>
+        <div className="max-w-screen-xl lg:mt-5 p-5 lg:p-0 bg-gray-50 mx-auto">
           <Tracker events={nftowner} />
         </div>
       </div>
