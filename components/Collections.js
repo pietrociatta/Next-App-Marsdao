@@ -1,7 +1,7 @@
-import React from "react";
-import CollectionItem from "./CollectionItem";
-import Box1 from "../assets/images/box-1.png";
-import Hidden from "../assets/images/hidden-box.png";
+import React from 'react';
+import CollectionItem from './CollectionItem';
+import Box1 from '../assets/images/box-1.png';
+import Hidden from '../assets/images/hidden-box.png';
 
 function Collections() {
   return (
@@ -10,15 +10,15 @@ function Collections() {
         <h1 className="font-Poppins text-3xl font-semibold text-black text-center  lg:text-4xl  ">
           Browse by Category
         </h1>
-        <p className="font-Poppins text-base font-normal text-black opacity-70 mb-12  mt-2 text-center  lg:text-xl lg:mt-2">
+        <h1 className="font-Poppins text-base font-normal text-black opacity-70 mb-12  mt-2 text-center  lg:text-xl lg:mt-2">
           Latest collection available.
-        </p>
+        </h1>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 lg:px-0 px-4">
           <div>
             <CollectionItem image={Box1} name="Magical Flower" link="/mint" />
           </div>
           <div>
-            <CollectionItem image={Hidden} name="Available Soon" link="" />
+            <CollectionItem image={Hidden} name="Available Soon" link="/" />
           </div>
           <div>
             <CollectionItem image={Hidden} name="Available Soon" />

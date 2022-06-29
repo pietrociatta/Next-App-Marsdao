@@ -25,4 +25,15 @@ module.exports = {
     prefix: "",
     darkTheme: "dark",
   },
+
+  daisyui: {
+    styled: true,
+    themes: ["dark"],
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: "",
+    darkTheme: "dark",
+  },
 };

@@ -1,10 +1,9 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 function CollectionItem(props) {
   const newTo = {
     pathname: props.link,
-    param1: "Par1",
   };
   return (
     <div>

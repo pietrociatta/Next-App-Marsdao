@@ -1,30 +1,30 @@
-import React from "react";
-import WalletConnect from "./WalletConnect";
-import { FiUser, FiLogOut } from "react-icons/fi";
-import { AiFillHome } from "react-icons/ai";
-import { BiUserCircle } from "react-icons/bi";
-import { useState, useEffect } from "react";
-import { useMoralis } from "react-moralis";
-import { Blockie } from "web3uikit";
-import Link from "next/link";
-import { ImPriceTag } from "react-icons/im";
+import React from 'react';
+import WalletConnect from './WalletConnect';
+import { FiUser, FiLogOut } from 'react-icons/fi';
+import { AiFillHome } from 'react-icons/ai';
+import { BiUserCircle } from 'react-icons/bi';
+import { useState, useEffect } from 'react';
+import { useMoralis } from 'react-moralis';
+import { Blockie } from 'web3uikit';
+import Link from 'next/link';
+import { ImPriceTag } from 'react-icons/im';
 
 function Header() {
   const [sidebar, setSidebar] = useState(false);
   const { authenticate, isAuthenticated, user, logout } = useMoralis();
   const showSidebar = () => setSidebar(!sidebar);
   const [address, setAddress] = useState();
-  const [formattedAccount, setformattedAccount] = useState("");
+  const [formattedAccount, setformattedAccount] = useState('');
 
   useEffect(() => {
     if (isAuthenticated) {
       const indirizzo = user.attributes.ethAddress;
       setAddress(indirizzo);
-      let format = indirizzo.slice(0, 4) + "..." + indirizzo.slice(-3);
+      let format = indirizzo.slice(0, 4) + '...' + indirizzo.slice(-3);
       setformattedAccount(format);
     } else {
-      setAddress("");
-      setformattedAccount("");
+      setAddress('');
+      setformattedAccount('');
     }
   }, [isAuthenticated]);
   return (
@@ -53,10 +53,10 @@ function Header() {
           </a>
 
           <nav
-            className={ 
+            className={
               sidebar
-                ? "nav-menu active flex-col  bg-white"
-                : "nav-menu flex-col"
+                ? 'nav-menu active flex-col  bg-white'
+                : 'nav-menu flex-col'
             }
           >
             <ul className=" text-black w-full p-3 mb-auto   ">
@@ -69,7 +69,7 @@ function Header() {
                 className="cursor-pointer  border-b-[1px] border-gray-100 "
                 onClick={showSidebar}
               >
-                <Link href="/">
+                <Link href="/" as="/">
                   <h1 className="flex items-center font-Poppins mt-2 py-3 px-4 hover:text-white hover:bg-black text-base w-full gap-2 rounded-lg">
                     <AiFillHome /> Home
                   </h1>
@@ -79,7 +79,7 @@ function Header() {
                 className="cursor-pointer border-b-[1px] border-gray-100 "
                 onClick={showSidebar}
               >
-                <Link href="/mint">
+                <Link href="/mint" as="/mint">
                   <h1 className="flex items-center font-Poppins mt-2 py-3 px-4 hover:text-white hover:bg-black text-base w-full gap-2 rounded-lg">
                     <ImPriceTag size={18} /> Mint
                   </h1>
@@ -98,11 +98,11 @@ function Header() {
           <div className="text-xs ">{formattedAccount}</div>
           <div className="dropdown   dropdown-end ">
             <div
-              className={isAuthenticated ? "avatar  online" : "avatar  offline"}
+              className={isAuthenticated ? 'avatar  online' : 'avatar  offline'}
             >
               <div>
                 <label className="btn btn-ghost btn-circle " tabIndex="0">
-                  <Blockie className="rounded-full" seed={address} />
+                  <Blockie className="rounded-full" seed={address || 'fwgwe'} />
                 </label>
               </div>
             </div>
@@ -113,7 +113,7 @@ function Header() {
                   className="dropdown-content menu mt-0 p-2  bg-white rounded-b-xl w-52"
                 >
                   <li>
-                    <Link href="/form">
+                    <Link href="/form" as="/form">
                       <div className="">
                         <a className="font-Poppins flex gap-3 items-center">
                           <FiUser />
