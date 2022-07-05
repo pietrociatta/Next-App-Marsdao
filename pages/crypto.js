@@ -32,7 +32,7 @@ function Crypto() {
                 image={coin1}
                 video={'/video/metaviaolet.mp4'}
                 name="LAND"
-                link="/"
+                link="/mint"
               />
             </div>
             <div>
