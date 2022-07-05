@@ -12,7 +12,7 @@ import Tracker from './Tracker';
 import { ImPriceTag } from 'react-icons/im';
 import MintSwiper from './MintSwiper';
 
-const ContractAddress = '0x6F6990f844e2Ddb8B84DFCF8d08e60EDc32fb4D7';
+const ContractAddress = '0x963431Ead8eC4aDE9E4e90a9F155694e6dc4B5A6';
 
 function MintSection() {
   //context useState

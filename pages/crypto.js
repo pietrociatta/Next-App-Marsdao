@@ -43,10 +43,10 @@ function Crypto() {
               />
             </div>
             <div>
-              <CollectionItem image={coin3} name="Available Soon" />
+              <CollectionItem image={Hidden} name="Available Soon" />
             </div>
             <div>
-              <CollectionItem image={coin4} name="Available Soon" />
+              <CollectionItem image={Hidden} name="Available Soon" />
             </div>
             <div>
               <CollectionItem image={Hidden} name="Magical Flower" />
