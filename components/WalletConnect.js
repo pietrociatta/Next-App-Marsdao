@@ -1,11 +1,11 @@
-import React from "react";
-import { useMoralis } from "react-moralis";
-import MetamaskIcon from "../assets/images/metamask.svg";
-import Walletconnect from "../assets/images/walletconnect.svg";
-import Image from "next/image";
-import { useContext } from "react";
-import { WalletSelectionContext } from "./WalletSelectionContext";
-import { IoWallet } from "react-icons/io5";
+import React from 'react';
+import { useMoralis } from 'react-moralis';
+import MetamaskIcon from '../assets/images/metamask.svg';
+import Walletconnect from '../assets/images/walletconnect.svg';
+import Image from 'next/image';
+import { useContext } from 'react';
+import { WalletSelectionContext } from './WalletSelectionContext';
+import { IoWallet } from 'react-icons/io5';
 
 function WalletConnect() {
   const { value, setValue } = useContext(WalletSelectionContext);
@@ -14,7 +14,7 @@ function WalletConnect() {
     <div className="font-Poppins  ">
       <label
         htmlFor="my-modal-3"
-        className="btn  w-full  bg-[#001EFF] text-white modal-button"
+        className="btn  w-full  bg-[#CB8607] text-white modal-button"
       >
         <span>
           <IoWallet size={25} className="mr-2" />
@@ -39,7 +39,7 @@ function WalletConnect() {
             <div
               className="btn  block h-fit py-4"
               onClick={() => {
-                setValue("metamask");
+                setValue('metamask');
                 authenticate({ chainId: 80001 });
               }}
             >
@@ -53,8 +53,8 @@ function WalletConnect() {
             <div
               className="btn  block h-fit py-4"
               onClick={() => {
-                setValue("walletconnect");
-                authenticate({ provider: "walletconnect", chainId: 80001 });
+                setValue('walletconnect');
+                authenticate({ provider: 'walletconnect', chainId: 80001 });
               }}
             >
               <div className="pb-3">

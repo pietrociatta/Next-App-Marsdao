@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 function Footer() {
   return (
     <div>
-      <footer className="footer items-center justify-between flex p-4 bg-white text-black border-t-[1px] border-gray-200">
+      <footer className="footer items-center justify-between flex p-4 bg-base-300 text-slate-50 border-t-[1px] border-base-100">
         <div className="items-center grid-flow-col text-xs">
           <p>Copyright © 2022 - All right reserved</p>
         </div>

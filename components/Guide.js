@@ -1,11 +1,11 @@
-import React from "react";
-import Step1 from "../assets/images/step1.png";
-import Image from "next/image";
+import React from 'react';
+import Step1 from '../assets/images/step1.png';
+import Image from 'next/image';
 
 function Guide() {
   return (
     <div className="lg:mx-10  py-16">
-      <div className="bg-[#001EFF]">
+      <div className="bg-base-100">
         <h1 className="font-Poppins text-3xl font-semibold text-white text-center  lg:text-4xl  ">
           How to get started
         </h1>
@@ -46,7 +46,7 @@ function Guide() {
           <div className="text-center">
             <Image src={Step1} alt="" className="mx-auto lg:w-2/3 w-1/2" />
             <h1 className="text-lg lg:text-base font-bold  text-white font-Poppins pt-3 ">
-              Mint your NFT and WIN!{" "}
+              Mint your NFT and WIN!{' '}
             </h1>
             <p className=" mx-8 font-Poppins text-md font-normal text-white mb-12  mt-2 text-center  lg:text-2xs lg:mx-0 lg:mt-2">
               Lorem Ipsum is simply dummy text of the printing and typesetting

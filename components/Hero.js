@@ -1,8 +1,8 @@
-import React from "react";
-import { useMoralis } from "react-moralis";
-import HeroImage from "../assets/images/hero-image.png";
-import WalletConnect from "./WalletConnect";
-import Image from "next/image";
+import React from 'react';
+import { useMoralis } from 'react-moralis';
+import HeroImage from '../assets/images/logo.png';
+import WalletConnect from './WalletConnect';
+import Image from 'next/image';
 function Hero() {
   const { isAuthenticated, authenticate } = useMoralis();
 

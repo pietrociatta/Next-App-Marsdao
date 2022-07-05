@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -85,7 +85,7 @@
   }
 
   .container2 .swiper-slide {
-    width: 320px;
+    width: 305px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     border-radius: 50px;
   }
@@ -93,8 +93,6 @@
   .container2 .mySwiper2 {
     padding-top: 50px;
     padding-bottom: 50px;
-    padding-left: 25px;
-    padding-right: 25px;
   }
 
   .container2 .swiper-button-next {

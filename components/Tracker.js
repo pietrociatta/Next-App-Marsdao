@@ -1,16 +1,13 @@
-import React from "react";
-import { ImPriceTag } from "react-icons/im";
+import React from 'react';
+import { ImPriceTag } from 'react-icons/im';
 
 function Tracker({ events }) {
   return (
-    <div className="bg-white rounded-xl p-2 mt-3 shadow-md">
+    <div className="bg-base-300 rounded-xl p-2 mt-3 shadow-md">
       <div className="h-[300px]  font-Poppins text-base  ">
-        <div className="flex justify-between sticky top-0 px-2  text-black bg-white py-2 ">
+        <div className="flex justify-between sticky top-0 px-2  text-slate-50 bg-base-300 py-2 ">
           <div>
             <h1>Owners</h1>
-          </div>
-          <div className="mr-2">
-            <h1>Time</h1>
           </div>
         </div>
         <div className="px-2 text-xs lg:text-base overflow-auto h-[240px] ">
@@ -25,7 +22,7 @@ function Tracker({ events }) {
                 </div>
                 <div>
                   {event.owner_of.slice(0, 7) +
-                    "..." +
+                    '...' +
                     event.owner_of.slice(-3)}
                 </div>
               </div>

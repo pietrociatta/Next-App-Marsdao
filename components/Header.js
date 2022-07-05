@@ -8,6 +8,8 @@ import { useMoralis } from 'react-moralis';
 import { Blockie } from 'web3uikit';
 import Link from 'next/link';
 import { ImPriceTag } from 'react-icons/im';
+import Logo from '../assets/images/logo-header.png';
+import Image from 'next/image';
 
 function Header() {
   const [sidebar, setSidebar] = useState(false);
@@ -29,7 +31,7 @@ function Header() {
   }, [isAuthenticated]);
   return (
     <div className="">
-      <div className="navbar py-0 bg-white text-black ">
+      <div className="navbar py-0 bg-[#1F242D] text-slate-50 ">
         <div className="navbar-start">
           <a
             onClick={showSidebar}
@@ -55,18 +57,18 @@ function Header() {
           <nav
             className={
               sidebar
-                ? 'nav-menu active flex-col  bg-white'
+                ? 'nav-menu active flex-col  bg-base-300'
                 : 'nav-menu flex-col'
             }
           >
-            <ul className=" text-black w-full p-3 mb-auto   ">
+            <ul className=" text-slate-50 w-full p-3 mb-auto   ">
               <div className="mb-5">
                 <a onClick={showSidebar} className="btn btn-ghost btn-circle ">
                   X
                 </a>
               </div>
               <li
-                className="cursor-pointer  border-b-[1px] border-gray-100 "
+                className="cursor-pointer  border-b-[1px] border-base-100 "
                 onClick={showSidebar}
               >
                 <Link href="/" as="/">
@@ -76,7 +78,7 @@ function Header() {
                 </Link>
               </li>
               <li
-                className="cursor-pointer border-b-[1px] border-gray-100 "
+                className="cursor-pointer border-b-[1px] border-base-100 "
                 onClick={showSidebar}
               >
                 <Link href="/mint" as="/mint">
@@ -92,7 +94,7 @@ function Header() {
           </nav>
         </div>
         <div className="navbar-center">
-          <a className="btn btn-ghost normal-case text-xl">MarsDAO</a>
+          <Image src={Logo} alt="" width={187.5} height={55.5} />
         </div>
         <div className="navbar-end ">
           <div className="text-xs ">{formattedAccount}</div>
@@ -110,7 +112,7 @@ function Header() {
               <div>
                 <ul
                   tabIndex="0"
-                  className="dropdown-content menu mt-0 p-2  bg-white rounded-b-xl w-52"
+                  className="dropdown-content menu mt-0 p-2  bg-base-300 rounded-b-xl w-52"
                 >
                   <li>
                     <Link href="/form" as="/form">

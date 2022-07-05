@@ -16,10 +16,10 @@ function CollectionSwiper() {
 
   return (
     <div className="mx-2 py-10">
-      <h1 className="font-Poppins text-3xl font-semibold text-black text-center  lg:text-4xl  ">
+      <h1 className="font-Poppins text-3xl font-semibold text-slate-50 text-center  lg:text-4xl  ">
         Trending
       </h1>
-      <h1 className="font-Poppins text-base font-normal text-black opacity-70 mb-5  mt-2 text-center  lg:text-xl lg:mt-2">
+      <h1 className="font-Poppins text-base font-normal text-slate-50 opacity-70 mb-5  mt-2 text-center  lg:text-xl lg:mt-2">
         Latest collection available.
       </h1>
       <div>

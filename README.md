@@ -48,3 +48,77 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+# Mars DAO - Smart Contract (ERC721A)
+
+https://marsdao.net/
+
+<hr />
+
+## General
+
+Brief: The Smart contract at MINT must randomly take the images of the collection so that **no one can know what has been minted.**
+
+### Rarities:
+
+Different distribution for each collection
+
+Example:
+
+| Type       | Amount |
+| ---------- | :----: |
+| Super Rare |   1    |
+| Rare       |   10   |
+| Non-Common |   80   |
+| Regular    |   x    |
+
+## Payment
+
+**Total: $15,000** (50% Before writing code)
+
+- David: $7,500 (50%) Wire Transfer
+
+- Pietro: $7,500 (50%)
+
+## Requirements
+
+- Upload all images to IPFS (random order). No one will be able to see what NFT is rare (not even developers or owner).
+
+- Frontend mint function (ReactJS)
+
+- Create `ERC721A` Smart Contract
+
+  - Random Mint (No one will know the NFT minted)
+
+  - Whitelist? What do you want with whitelist or do you not need it?
+
+## Random Images
+
+https://medium.com/northwest-nfts/bored-ape-yacht-club-contract-review-80dce503308e
+
+https://forum.openzeppelin.com/t/are-nft-projects-doing-starting-index-randomization-and-provenance-wrong-or-is-it-just-me/14147?page=2
+
+https://youtu.be/kApajL7v854
+
+https://www.youtube.com/watch?v=sHOt0xdg5Dg
+
+<hr />
+
+## Customer Request
+
+All images must be extracted randomly, uploading all images to IPFS so that the Smart Contract takes the images in a Random manner, assigns them to the Wallet, and leaves a certain amount of time for the exchange and the users who receive their token obscured, they can sell and exchange it but they do not know what the rarity of it is until the end of the established time, after which there will be the REVEALING where the rarity of them will be known.
+
+By the time people trade their still obscured NFTs they will not know if they are selling a high rarity or not so the token exchange will be totally random, by doing so **we guarantee users that no one can touch the Smart Contract and that 100% randomly no one can manipulate it in any way**.
+
+We would like to add that such a thing has already been created by Bored Ape Yatch Club, our project is based on very well defined ideas and will surely appeal to end users.
+
+<hr />
+
+> - Possibility of being audited by a third party to demonstrate immutability and randomness.
+
+## Environment Variables
+
+Add the sensitive information like API Keys to your `~/.zshenv` file. See more here: https://apple.stackexchange.com/questions/356441/how-to-add-permanent-environment-variable-in-zsh
+
+`echo 'export ETHERSCAN_API_KEY="YOUR_API_KEY"' >> ~/.zshenv`
+
