@@ -17,7 +17,7 @@ function CollectionItem(props) {
             {props.video != null ? (
               <div>
                 <video autoPlay muted loop className="w-full rounded-t-xl">
-                  <source src="/video/metasilver.mp4" type="video/mp4" />
+                  <source src={props.video} type="video/mp4" />
                 </video>
               </div>
             ) : (

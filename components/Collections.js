@@ -4,6 +4,7 @@ import Cash from '../assets/images/cash.png';
 import Crypto from '../assets/images/crypto.png';
 import Tech from '../assets/images/tech.png';
 import Hidden from '../assets/images/hidden-box.png';
+import Placeholder from '../assets/images/placeholder.png';
 
 function Collections() {
   return (
@@ -26,13 +27,13 @@ function Collections() {
             <CollectionItem image={Cash} name="CASH" link="/cash" />
           </div>
           <div>
-            <CollectionItem image={Hidden} name="Available Soon" />
+            <CollectionItem image={Placeholder} name="Available Soon" />
           </div>
           <div>
-            <CollectionItem image={Hidden} name="Available Soon" />
+            <CollectionItem image={Placeholder} name="Available Soon" />
           </div>
           <div>
-            <CollectionItem image={Hidden} name="Magical Flower" />
+            <CollectionItem image={Placeholder} name="Available Soon" />
           </div>
         </div>
       </div>

@@ -17,8 +17,8 @@ function Hitech() {
             <div>
               <CollectionItem
                 image={Box1}
-                video={'/video/metasilver.mp4'}
-                name="LAND"
+                video={'/video/iphone.mp4'}
+                name="IPHONE"
                 link="/mint"
                 color={'bg-base-300'}
               />

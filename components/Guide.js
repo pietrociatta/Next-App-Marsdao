@@ -16,41 +16,42 @@ function Guide() {
           <div className="text-center">
             <Image src={Step1} alt="" className="mx-auto lg:w-2/3 w-1/2" />
             <h1 className="text-lg lg:text-base font-bold text-white font-Poppins pt-3 ">
-              Download Metamask
+              Step 1
             </h1>
             <p className=" mx-8 font-Poppins text-md font-normal text-white mb-12  mt-2 text-center  lg:text-2xs lg:mx-0 lg:mt-2">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
+              Download and install Metamask on your smartphone or log in from a
+              PC, configure the BSC network and deposit USDT into your wallet.
             </p>
           </div>
           <div className="text-center">
             <Image src={Step1} alt="" className="mx-auto lg:w-2/3 w-1/2" />
             <h1 className="text-lg lg:text-base font-bold  text-white font-Poppins pt-3 ">
-              Add Matic Blockchain
+              Step 2
             </h1>
             <p className=" mx-8 lg:mx-0 font-Poppins text-md font-normal text-white mb-12  mt-2 text-center  lg:text-2xs lg:mt-2">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
+              Access mintingo.ai from the metamask browser and click on connect
+              wallet.
             </p>
           </div>
           <div className="text-center">
             <Image src={Step1} alt="" className="mx-auto lg:w-2/3 w-1/2" />
             <h1 className="text-lg lg:text-base font-bold  text-white font-Poppins pt-3 ">
-              Choose one category
+              Step 3
             </h1>
             <p className=" mx-8 font-Poppins text-md font-light text-white mb-12  mt-2 text-center lg:mx-0  lg:text-2xs lg:mt-2">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
+              Choose the NFT category you prefer and dream of winning ... Click
+              on your favorite NFT according to your budget and winning level
             </p>
           </div>
           <div className="text-center">
             <Image src={Step1} alt="" className="mx-auto lg:w-2/3 w-1/2" />
             <h1 className="text-lg lg:text-base font-bold  text-white font-Poppins pt-3 ">
-              Mint your NFT and WIN!{' '}
+              Step 4
             </h1>
             <p className=" mx-8 font-Poppins text-md font-normal text-white mb-12  mt-2 text-center  lg:text-2xs lg:mx-0 lg:mt-2">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
+              Mint your NFT, invite your friends and at the end of the minting
+              you will receive your NFT in a totally random way. 80% OF
+              PARTICIPANTS WIN AN AWARD
             </p>
           </div>
         </div>

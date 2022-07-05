@@ -21,17 +21,26 @@ function Crypto() {
             <div>
               <CollectionItem
                 image={Box1}
-                video={'/video/metasilver.mp4'}
-                name="LAND"
+                video={'/video/etherum.mp4'}
+                name="ETHEREUM"
                 link="/mint"
                 color={'bg-base-300'}
               />
             </div>
             <div>
-              <CollectionItem image={coin1} name="Available Soon" link="/" />
+              <CollectionItem
+                image={coin1}
+                video={'/video/metaviaolet.mp4'}
+                name="LAND"
+                link="/"
+              />
             </div>
             <div>
-              <CollectionItem image={coin2} name="Available Soon" />
+              <CollectionItem
+                image={coin2}
+                name="BITCOIN"
+                video={'/video/bitcoin.mp4'}
+              />
             </div>
             <div>
               <CollectionItem image={coin3} name="Available Soon" />

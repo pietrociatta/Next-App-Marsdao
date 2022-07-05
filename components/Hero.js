@@ -3,6 +3,7 @@ import { useMoralis } from 'react-moralis';
 import HeroImage from '../assets/images/logo.png';
 import WalletConnect from './WalletConnect';
 import Image from 'next/image';
+import Link from 'next/link';
 function Hero() {
   const { isAuthenticated, authenticate } = useMoralis();
 
@@ -19,17 +20,18 @@ function Hero() {
 
           {isAuthenticated ? (
             <div className="flex justify-center gap-3 mt-6 lg:mt-8 lg:justify-start">
-              <button className="btn bg-[#001EFF] text-white">Explore</button>
-              <button className="btn bg-[#CEB000] text-white">
-                Create Profile
-              </button>
+              <Link href="/categories" as="/categories">
+                <button className="btn bg-[#001EFF] text-white">Explore</button>
+              </Link>
+              <Link href="/form" as="/form">
+                <button className="btn bg-[#CB8607] text-white">
+                  Create Profile
+                </button>
+              </Link>
             </div>
           ) : (
             <div className="flex lg:justify-start justify-center gap-3 pt-6">
               <WalletConnect />
-              <button className="btn bg-[#CEB000] text-white">
-                Create Profile
-              </button>
             </div>
           )}
         </div>

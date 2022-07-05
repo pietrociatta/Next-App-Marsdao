@@ -81,9 +81,9 @@ function Header() {
                 className="cursor-pointer border-b-[1px] border-base-100 "
                 onClick={showSidebar}
               >
-                <Link href="/mint" as="/mint">
+                <Link href="/categories" as="/categories">
                   <h1 className="flex items-center font-Poppins mt-2 py-3 px-4 hover:text-white hover:bg-black text-base w-full gap-2 rounded-lg">
-                    <ImPriceTag size={18} /> Mint
+                    <ImPriceTag size={18} /> Categories
                   </h1>
                 </Link>
               </li>
@@ -94,7 +94,9 @@ function Header() {
           </nav>
         </div>
         <div className="navbar-center">
-          <Image src={Logo} alt="" width={187.5} height={55.5} />
+          <Link href="/" as="/">
+            <Image src={Logo} alt="" width={187.5} height={55.5} />
+          </Link>
         </div>
         <div className="navbar-end ">
           <div className="text-xs ">{formattedAccount}</div>
