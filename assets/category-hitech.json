@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Iphone",
+    "video": "/video/iphone.mp4",
+    "price": "0.1",
+    "address": "0x963431Ead8eC4aDE9E4e90a9F155694e6dc4B5A6",
+    "description": "collezione iphone",
+    "videos": [
+      "/video/iphone.mp4",
+      "/video/iphone.mp4",
+      "/video/iphone.mp4",
+      "/video/iphone.mp4",
+      "/video/iphone.mp4"
+    ]
+  },
+  {
+    "name": "Macbook",
+    "video": "/video/metaviaolet.mp4",
+    "price": "0.3",
+    "address": "0x963431Ead8eC4aDE9E4e90a9F155694e6dc4B5A6",
+    "description": "collezione macbook"
+  },
+  {
+    "name": "Smartwatch",
+    "video": "/video/bitcoin.mp4",
+    "price": "0.9",
+    "address": "0x963431Ead8eC4aDE9E4e90a9F155694e6dc4B5A6",
+    "description": "collezione smartwatch"
+  }
+]

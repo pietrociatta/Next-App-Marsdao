@@ -1,7 +1,11 @@
 import React from 'react';
-import CollectionItem from '../components/CollectionItem';
+
 import Box1 from '../assets/images/box-1.png';
-import Hidden from '../assets/images/hidden-box.png';
+
+import SingleCollectionItem from '../components/SingleCollectionItem';
+
+import collections from '../assets/category-hitech.json';
+import Link from 'next/link';
 function Hitech() {
   return (
     <div className="bg-base-100 text-slate-50 max-w-screen-xl mx-auto ">
@@ -14,30 +18,22 @@ function Hitech() {
             Latest collection available.
           </h1>
           <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 lg:px-0 px-4">
-            <div>
-              <CollectionItem
-                image={Box1}
-                video={'/video/iphone.mp4'}
-                name="IPHONE"
-                link="/mint"
-                color={'bg-base-300'}
-              />
-            </div>
-            <div>
-              <CollectionItem image={Hidden} name="Available Soon" link="/" />
-            </div>
-            <div>
-              <CollectionItem image={Hidden} name="Available Soon" />
-            </div>
-            <div>
-              <CollectionItem image={Hidden} name="Available Soon" />
-            </div>
-            <div>
-              <CollectionItem image={Hidden} name="Available Soon" />
-            </div>
-            <div>
-              <CollectionItem image={Hidden} name="Magical Flower" />
-            </div>
+            {collections.map((collection, i) => (
+              <Link
+                key={i}
+                href={{ pathname: '/mint', query: collection }}
+                passHref
+              >
+                <a>
+                  <SingleCollectionItem
+                    image={Box1}
+                    video={collection.video}
+                    name={collection.name}
+                    collectionData={collection}
+                  />
+                </a>
+              </Link>
+            ))}
           </div>
         </div>
       </div>

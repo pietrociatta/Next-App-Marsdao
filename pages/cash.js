@@ -2,6 +2,7 @@ import React from 'react';
 import CollectionItem from '../components/CollectionItem';
 import Box1 from '../assets/images/box-1.png';
 import Hidden from '../assets/images/hidden-box.png';
+import SingleCollectionItem from '../components/SingleCollectionItem';
 function Cash() {
   return (
     <div className="bg-base-100 text-slate-50 max-w-screen-xl mx-auto ">
@@ -15,7 +16,7 @@ function Cash() {
           </h1>
           <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 lg:px-0 px-4">
             <div>
-              <CollectionItem
+              <SingleCollectionItem
                 image={Box1}
                 video={'/video/metasilver.mp4'}
                 name="LAND"
@@ -24,19 +25,23 @@ function Cash() {
               />
             </div>
             <div>
-              <CollectionItem image={Hidden} name="Available Soon" link="/" />
+              <SingleCollectionItem
+                image={Hidden}
+                name="Available Soon"
+                link="/"
+              />
             </div>
             <div>
-              <CollectionItem image={Hidden} name="Available Soon" />
+              <SingleCollectionItem image={Hidden} name="Available Soon" />
             </div>
             <div>
-              <CollectionItem image={Hidden} name="Available Soon" />
+              <SingleCollectionItem image={Hidden} name="Available Soon" />
             </div>
             <div>
-              <CollectionItem image={Hidden} name="Available Soon" />
+              <SingleCollectionItem image={Hidden} name="Available Soon" />
             </div>
             <div>
-              <CollectionItem image={Hidden} name="Magical Flower" />
+              <SingleCollectionItem image={Hidden} name="Magical Flower" />
             </div>
           </div>
         </div>

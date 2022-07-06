@@ -1,11 +1,11 @@
 import React from 'react';
-import CollectionItem from '../components/CollectionItem';
+
 import Box1 from '../assets/images/box-1.png';
-import coin1 from '../assets/images/coin1.jpg';
-import coin2 from '../assets/images/coin2.jpg';
-import coin3 from '../assets/images/coin3.jpg';
-import coin4 from '../assets/images/coin4.jpg';
-import Hidden from '../assets/images/hidden-box.png';
+
+import SingleCollectionItem from '../components/SingleCollectionItem';
+
+import collections from '../assets/category-crypto.json';
+import Link from 'next/link';
 function Crypto() {
   return (
     <div className="bg-base-100 text-slate-50 max-w-screen-xl mx-auto ">
@@ -18,39 +18,22 @@ function Crypto() {
             Latest collection available.
           </h1>
           <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 lg:px-0 px-4">
-            <div>
-              <CollectionItem
-                image={Box1}
-                video={'/video/etherum.mp4'}
-                name="ETHEREUM"
-                link="/mint"
-                color={'bg-base-300'}
-              />
-            </div>
-            <div>
-              <CollectionItem
-                image={coin1}
-                video={'/video/metaviaolet.mp4'}
-                name="LAND"
-                link="/mint"
-              />
-            </div>
-            <div>
-              <CollectionItem
-                image={coin2}
-                name="BITCOIN"
-                video={'/video/bitcoin.mp4'}
-              />
-            </div>
-            <div>
-              <CollectionItem image={Hidden} name="Available Soon" />
-            </div>
-            <div>
-              <CollectionItem image={Hidden} name="Available Soon" />
-            </div>
-            <div>
-              <CollectionItem image={Hidden} name="Magical Flower" />
-            </div>
+            {collections.map((collection, i) => (
+              <Link
+                key={i}
+                href={{ pathname: '/mint', query: collection }}
+                passHref
+              >
+                <a>
+                  <SingleCollectionItem
+                    image={Box1}
+                    video={collection.video}
+                    name={collection.name}
+                    collectionData={collection}
+                  />
+                </a>
+              </Link>
+            ))}
           </div>
         </div>
       </div>

@@ -11,10 +11,27 @@ import { WalletSelectionContext } from './WalletSelectionContext';
 import Tracker from './Tracker';
 import { ImPriceTag } from 'react-icons/im';
 import MintSwiper from './MintSwiper';
-
-const ContractAddress = '0x963431Ead8eC4aDE9E4e90a9F155694e6dc4B5A6';
+import { useRouter } from 'next/router';
+import Loader from './Loader';
 
 function MintSection() {
+  const [isLoading, setIsLoading] = useState(true);
+  const router = useRouter();
+  const [collection, setCollection] = useState({
+    name: '',
+    video: '',
+    price: '',
+    address: '',
+    description: '',
+    videos: [],
+  });
+  const ContractAddress = collection.address;
+
+  useEffect(() => {
+    if (!router.isReady) return;
+    setCollection(router.query);
+    setIsLoading(false);
+  }, [router.isReady]);
   //context useState
   const { value, setValue } = useContext(WalletSelectionContext);
 
@@ -42,7 +59,7 @@ function MintSection() {
   const getNft = async () => {
     if (isAuthenticated) {
       const options = {
-        chain: 'mumbai',
+        chain: 'bsc',
         token_address: ContractAddress,
       };
       const nftOwners = await Moralis.Web3API.token.getNFTOwners(options);
@@ -55,6 +72,12 @@ function MintSection() {
     initialize();
   }, [isAuthenticated]);
 
+  useEffect(() => {
+    if (ContractAddress) {
+      getNft();
+    } else return;
+  }, [ContractAddress]);
+
   const initialize = async () => {
     if (isAuthenticated) {
       setAddress(user.attributes.ethAddress);
@@ -62,10 +85,6 @@ function MintSection() {
       setAddress('');
     }
   };
-
-  useEffect(() => {
-    getNft();
-  }, [isAuthenticated]);
 
   const publicMint = async () => {
     const web3Provider = await Moralis.enableWeb3({
@@ -106,6 +125,7 @@ function MintSection() {
     if (mintAmount >= 5) return;
     setMintAmount(mintAmount + 1);
   };
+  if (isLoading) return <Loader />;
   return (
     <div className="h-full overflow-hidden">
       <div className="lg:py-10 py-5 lg:mx-10">
@@ -119,13 +139,13 @@ function MintSection() {
           </div>
           <div className="p-5 lg:p-0 lg:ml-8 md:max-w-lg mx-auto  w-full items-center  lg:w-1/2 ">
             <h1 className="font-Poppins text-2xl font-semibold text-slate-50 text-center lg:text-left lg:text-4xl  ">
-              LAND NFT
+              {collection.name}
             </h1>
             <p className="font-Poppins text-sm font-normal text-slate-50 opacity-70  mt-3 text-center lg:text-left lg:text-sm lg:mt-3">
               Saskehh Rio
             </p>
             <p className="font-Poppins text-base font-normal text-slate-50   mt-3 text-center lg:text-left lg:text-xl lg:mt-3">
-              0,20 ETH
+              {collection.price} ETH
             </p>
             <div className="">
               <div className="mt-4 flex justify-center lg:justify-start">
@@ -153,12 +173,7 @@ function MintSection() {
                 Description
               </p>
               <p className="font-Poppins text-[15px] font-normal text-slate-50 lg:pr-8  mt-3 text-left lg:text-[15px] lg:mt-3">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled.Lorem Ipsum is simply dummy text of the
-                printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text.
+                {collection.description}
               </p>
               <div className="w-full h-[1px] bg-gray-200 mt-3"></div>
             </div>
@@ -219,7 +234,7 @@ function MintSection() {
           </div>
         </div>
         <div className="bg-base-300 rounded-xl p-4 mt-16 ">
-          <MintSwiper />
+          <MintSwiper videos={collection.videos} />
         </div>
         <div className="max-w-screen-xl lg:mt-5 p-5 lg:p-0 bg-base-300 rounded-xl  mx-auto">
           <Tracker events={nftowner} />
