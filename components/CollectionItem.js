@@ -10,7 +10,7 @@ function CollectionItem(props) {
       <Link href={newTo}>
         <div
           className={`${
-            props.color != null ? 'bg-base-300' : 'bg-base-100'
+            props.color != null ? 'bg-base-300' : 'bg-base-200'
           } w-full h-full rounded-xl p-0 border-none shadow-md btn`}
         >
           <div>

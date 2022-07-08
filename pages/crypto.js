@@ -1,6 +1,5 @@
 import React from 'react';
-
-import Box1 from '../assets/images/box-1.png';
+import Hidden from '../assets/images/hidden-light.png';
 
 import SingleCollectionItem from '../components/SingleCollectionItem';
 
@@ -26,7 +25,7 @@ function Crypto() {
               >
                 <a>
                   <SingleCollectionItem
-                    image={Box1}
+                    image={Hidden}
                     video={collection.video}
                     name={collection.name}
                     collectionData={collection}

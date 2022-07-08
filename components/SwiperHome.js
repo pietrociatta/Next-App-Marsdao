@@ -58,7 +58,7 @@ function SwiperHome() {
                 playsInline
                 className="w-full rounded-t-xl"
               >
-                <source src="/video/iphonehome.webm" type="video/webm" />
+                <source src="/video/bitcoin.mp4" type="video/mp4" />
               </video>
               <div className="bg-base-100 p-4 space-y-2  rounded-b-xl ">
                 <h1 className="text-xl font-Poppins font-semibold text-slate-50 text-center">
@@ -76,7 +76,7 @@ function SwiperHome() {
                 playsInline
                 className="w-full rounded-t-xl"
               >
-                <source src="/video/metaviaolet.webm" type="video/webm" />
+                <source src="/video/ethereum.mp4" type="video/mp4" />
               </video>
               <div className="bg-base-100 p-4 space-y-2  rounded-b-xl ">
                 <h1 className="text-xl font-Poppins font-semibold text-slate-50 text-center">
@@ -94,7 +94,7 @@ function SwiperHome() {
                 playsInline
                 className="w-full rounded-t-xl"
               >
-                <source src="/video/iphoneviaolet.webm" type="video/webm" />
+                <source src="/video/meta.mp4" type="video/mp4" />
               </video>
               <div className="bg-base-100 p-4 space-y-2  rounded-b-xl ">
                 <h1 className="text-xl font-Poppins font-semibold text-slate-50 text-center">

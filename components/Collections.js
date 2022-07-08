@@ -1,10 +1,10 @@
 import React from 'react';
 import CollectionItem from './CollectionItem';
-import Cash from '../assets/images/cash.png';
-import Crypto from '../assets/images/crypto.png';
-import Tech from '../assets/images/tech.png';
-import Hidden from '../assets/images/hidden-box.png';
-import Placeholder from '../assets/images/placeholder.png';
+import Cash from '../assets/images/cash-light.jpg';
+import Crypto from '../assets/images/crypto-light.jpg';
+import Tech from '../assets/images/tech-light.jpg';
+
+import Placeholder from '../assets/images/hidden-light.png';
 
 function Collections() {
   return (

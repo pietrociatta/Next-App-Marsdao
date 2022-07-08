@@ -1,7 +1,7 @@
 import React from 'react';
 import CollectionItem from '../components/CollectionItem';
-import Box1 from '../assets/images/box-1.png';
-import Hidden from '../assets/images/hidden-box.png';
+
+import Hidden from '../assets/images/hidden-light.png';
 import SingleCollectionItem from '../components/SingleCollectionItem';
 function Cash() {
   return (
@@ -17,7 +17,7 @@ function Cash() {
           <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 lg:px-0 px-4">
             <div>
               <SingleCollectionItem
-                image={Box1}
+                image={Hidden}
                 video={'/video/metasilver.mp4'}
                 name="LAND"
                 link="/mint"

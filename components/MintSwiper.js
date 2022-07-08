@@ -8,7 +8,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { EffectCoverflow, Pagination, Navigation } from 'swiper';
 import Image from 'next/image';
-import iphone from '../assets/images/iphone.png';
 
 function MintSwiper({ videos }) {
   const [allVideos, setallVideos] = useState([]);
