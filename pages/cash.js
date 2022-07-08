@@ -1,7 +1,7 @@
 import React from 'react';
 import CollectionItem from '../components/CollectionItem';
 
-import Hidden from '../assets/images/hidden-light.png';
+import Hidden from '../public/static/images/hidden-light.png';
 import SingleCollectionItem from '../components/SingleCollectionItem';
 function Cash() {
   return (

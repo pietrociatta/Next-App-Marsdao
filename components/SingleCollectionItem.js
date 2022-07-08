@@ -2,30 +2,28 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const SingleCollectionItem = ({ video, color, image, name }) => {
+const SingleCollectionItem = ({ color, image, name }) => {
   return (
-    <div>
+    <div className="w-[300px] h-full ">
       <div
         className={`${
           color != null ? 'bg-base-300' : 'bg-base-100'
         } w-full h-full rounded-xl p-0 border-none shadow-md btn`}
       >
         <div>
-          {video != null ? (
-            <div>
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full rounded-t-xl"
-              >
-                <source src={video} type="video/webm" />
-              </video>
-            </div>
-          ) : (
-            <Image src={image} alt="" className="rounded-t-xl" />
-          )}
+          <div
+            className={`${
+              color != null ? 'bg-white rounded-t-xl' : 'bg-base-100'
+            }`}
+          >
+            <Image
+              src={image}
+              alt=""
+              className="rounded-t-xl  "
+              width={300}
+              height={300}
+            />
+          </div>
         </div>
         <div className="text-center p-5">
           <h1 className="text-white font-Poppins">{name}</h1>

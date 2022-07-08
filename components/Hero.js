@@ -1,6 +1,6 @@
 import React from 'react';
 import { useMoralis } from 'react-moralis';
-import HeroImage from '../assets/images/logo.png';
+import HeroImage from '../public/static/images/logo.png';
 import WalletConnect from './WalletConnect';
 import Image from 'next/image';
 import Link from 'next/link';

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { useMoralis } from 'react-moralis';
-import HeroImage from '../assets/images/metamint.jpeg';
+import HeroImage from '../public/static/images/metamint.jpeg';
 import Image from 'next/image';
 import WalletConnect from './WalletConnect';
 import { GiConfirmed } from 'react-icons/gi';

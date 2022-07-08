@@ -1,5 +1,5 @@
 import React from 'react';
-import Step1 from '../assets/images/step1.png';
+import Step1 from '../public/static/images/step1.png';
 import Image from 'next/image';
 
 function Guide() {

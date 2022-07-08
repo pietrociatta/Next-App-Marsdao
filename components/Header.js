@@ -8,7 +8,7 @@ import { useMoralis } from 'react-moralis';
 import { Blockie } from 'web3uikit';
 import Link from 'next/link';
 import { ImPriceTag } from 'react-icons/im';
-import Logo from '../assets/images/logo-header.png';
+import Logo from '../public/static/images/logo-header.png';
 import Image from 'next/image';
 
 function Header() {

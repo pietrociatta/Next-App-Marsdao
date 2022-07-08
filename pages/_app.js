@@ -1,6 +1,7 @@
 import { MoralisProvider, useMoralis } from 'react-moralis';
 import '../styles/globals.css';
 import Header from '../components/Header';
+import Head from 'next/head';
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
@@ -51,14 +52,16 @@ function MyApp({ Component, pageProps }) {
     >
       <WalletSelectionContext.Provider value={{ value, setValue }}>
         <div className="sticky top-0 z-50 shadow-md	">
+          <Head>
+            <title key="title">Mintingo</title>
+          </Head>
           <Header />
         </div>
-
-        <Component {...pageProps} />
-
-        <div className="">
-          <Footer />
+        <div className="h-full lg:h-[100vh]">
+          <Component {...pageProps} />
         </div>
+
+        {/* <Footer /> */}
       </WalletSelectionContext.Provider>
     </MoralisProvider>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useMoralis } from 'react-moralis';
-import MetamaskIcon from '../assets/images/metamask.svg';
-import Walletconnect from '../assets/images/walletconnect.svg';
+import MetamaskIcon from '../public/static/images/metamask.svg';
+import Walletconnect from '../public/static/images/walletconnect.svg';
 import Image from 'next/image';
 import { useContext } from 'react';
 import { WalletSelectionContext } from './WalletSelectionContext';

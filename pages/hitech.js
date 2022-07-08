@@ -1,5 +1,5 @@
 import React from 'react';
-import Hidden from '../assets/images/hidden-light.png';
+import Hidden from '../public/static/images/hidden-light.png';
 
 import SingleCollectionItem from '../components/SingleCollectionItem';
 
@@ -16,22 +16,24 @@ function Hitech() {
           <h1 className="font-Poppins text-base font-normal text-slate-50 opacity-70 mb-12  mt-2 text-center  lg:text-xl lg:mt-2">
             Latest collection available.
           </h1>
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 lg:px-0 px-4">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-2 lg:px-0 px-4">
             {collections.map((collection, i) => (
-              <Link
-                key={i}
-                href={{ pathname: '/mint', query: collection }}
-                passHref
-              >
-                <a>
-                  <SingleCollectionItem
-                    image={Hidden}
-                    video={collection.video}
-                    name={collection.name}
-                    collectionData={collection}
-                  />
-                </a>
-              </Link>
+              <div className="mx-auto" key={i}>
+                <Link
+                  key={i}
+                  href={{ pathname: '/mint', query: collection }}
+                  passHref
+                >
+                  <a>
+                    <SingleCollectionItem
+                      image={Hidden}
+                      video={collection.video}
+                      name={collection.name}
+                      collectionData={collection}
+                    />
+                  </a>
+                </Link>
+              </div>
             ))}
           </div>
         </div>
