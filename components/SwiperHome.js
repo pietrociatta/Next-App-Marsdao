@@ -68,7 +68,7 @@ function SwiperHome() {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div id="1" className={box1}>
+            <div id="2" className={box1}>
               <video
                 autoPlay
                 muted
@@ -86,7 +86,7 @@ function SwiperHome() {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div id="1" className={box1}>
+            <div id="3" className={box1}>
               <video
                 autoPlay
                 muted
