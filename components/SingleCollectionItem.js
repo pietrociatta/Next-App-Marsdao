@@ -20,7 +20,7 @@ const SingleCollectionItem = ({ video, color, image, name }) => {
                 playsInline
                 className="w-full rounded-t-xl"
               >
-                <source src={video} type="video/mp4" />
+                <source src={video} type="video/webm" />
               </video>
             </div>
           ) : (

@@ -1,28 +1,28 @@
 [
   {
     "name": "Ethereum",
-    "video": "/video/etherum.mp4",
+    "video": "/video/iphonehome.webm",
     "price": "0.1",
     "address": "0x963431Ead8eC4aDE9E4e90a9F155694e6dc4B5A6",
     "description": "collezione ethereum",
     "videos": [
-      "/video/metabronze.mp4",
-      "/video/metawhite.mp4",
-      "/video/metaviaolet.mp4",
-      "/video/metasilver.mp4",
-      "/video/metagold.mp4"
+      "/video/iphonehome.webm",
+      "/video/iphonehome.webm",
+      "/video/iphonehome.webm",
+      "/video/iphonehome.webm",
+      "/video/iphonehome.webm"
     ]
   },
   {
     "name": "Meta",
-    "video": "/video/metaviaolet.mp4",
+    "video": "/video/iphonehome.webm",
     "price": "0.3",
     "address": "0x963431Ead8eC4aDE9E4e90a9F155694e6dc4B5A6",
     "description": "collezione meta"
   },
   {
     "name": "Bitcoin",
-    "video": "/video/bitcoin.mp4",
+    "video": "/video/iphonehome.webm",
     "price": "0.9",
     "address": "0x963431Ead8eC4aDE9E4e90a9F155694e6dc4B5A6",
     "description": "collezione bitcoin"
