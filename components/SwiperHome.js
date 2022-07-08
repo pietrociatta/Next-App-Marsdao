@@ -52,7 +52,13 @@ function SwiperHome() {
         >
           <SwiperSlide>
             <div id="1" className={box1}>
-              <video autoPlay muted loop className="w-full rounded-t-xl">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full rounded-t-xl"
+              >
                 <source src="/video/bitcoin.mp4" type="video/mp4" />
               </video>
               <div className="bg-base-100 p-4 space-y-2  rounded-b-xl ">
