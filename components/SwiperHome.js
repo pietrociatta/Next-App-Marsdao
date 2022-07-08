@@ -57,7 +57,7 @@ function SwiperHome() {
                 muted
                 loop
                 playsInline
-                className="w-full rounded-t-xl"
+                className="w-[4/6] rounded-t-xl"
               >
                 <source src="/video/bitcoin.mp4" type="video/mp4" />
               </video>
@@ -118,60 +118,6 @@ function SwiperHome() {
               <div className="bg-base-100 p-4 space-y-2  rounded-b-xl ">
                 <h1 className="text-xl font-Poppins font-semibold text-slate-50 text-center">
                   TRY TO WIN IPHONE
-                </h1>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div id="1" className={box1}>
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full rounded-t-xl"
-              >
-                <source src="/video/iphone.mp4" type="video/mp4" />
-              </video>
-              <div className="bg-base-100 p-4 space-y-2  rounded-b-xl ">
-                <h1 className="text-xl font-Poppins font-semibold text-slate-50 text-center">
-                  Try to win the latest Iphone 13 Pro
-                </h1>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div id="1" className={box1}>
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full rounded-t-xl"
-              >
-                <source src="/video/iphone.mp4" type="video/mp4" />
-              </video>
-              <div className="bg-base-100 p-4 space-y-2  rounded-b-xl ">
-                <h1 className="text-xl font-Poppins font-semibold text-slate-50 text-center">
-                  Try to win the latest Iphone 13 Pro
-                </h1>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div id="1" className={box1}>
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full rounded-t-xl"
-              >
-                <source src="/video/iphone.mp4" type="video/mp4" />
-              </video>
-              <div className="bg-base-100 p-4 space-y-2  rounded-b-xl ">
-                <h1 className="text-xl font-Poppins font-semibold text-slate-50 text-center">
-                  Try to win the latest Iphone 13 Pro
                 </h1>
               </div>
             </div>
