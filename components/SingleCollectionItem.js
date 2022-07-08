@@ -13,7 +13,13 @@ const SingleCollectionItem = ({ video, color, image, name }) => {
         <div>
           {video != null ? (
             <div>
-              <video autoPlay muted loop className="w-full rounded-t-xl">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full rounded-t-xl"
+              >
                 <source src={video} type="video/mp4" />
               </video>
             </div>

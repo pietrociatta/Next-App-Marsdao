@@ -14,8 +14,14 @@ import MintSwiper from './MintSwiper';
 import { useRouter } from 'next/router';
 import Loader from './Loader';
 
+// export async function getServerSideProps(context) {
+//   const mint = context.query;
+//   return { props: { mint } };
+// }
+
 function MintSection() {
   const [isLoading, setIsLoading] = useState(true);
+
   const router = useRouter();
   const [collection, setCollection] = useState({
     name: '',
@@ -25,14 +31,15 @@ function MintSection() {
     description: '',
     videos: [],
   });
-  const ContractAddress = collection.address;
 
+  const ContractAddress = collection.address;
   useEffect(() => {
     if (!router.isReady) return;
     setCollection(router.query);
+    setCollection(router.query);
     setIsLoading(false);
   }, [router.isReady]);
-  //context useState
+
   const { value, setValue } = useContext(WalletSelectionContext);
 
   //auth
