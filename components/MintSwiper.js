@@ -51,6 +51,7 @@ function MintSwiper({ videos }) {
                         autoPlay
                         muted
                         loop
+                        playsInline
                         className="w-full rounded-t-xl"
                       >
                         <source src={video} type="video/mp4" />
