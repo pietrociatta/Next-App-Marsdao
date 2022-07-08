@@ -9,8 +9,7 @@ import { Pagination } from 'swiper';
 import { Navigation } from 'swiper';
 
 function SwiperHome() {
-  const box1 =
-    'm-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl h-[370px] ';
+  const box1 = 'm-4 rounded-xl h-[370px] ';
 
   return (
     <div className="">
@@ -57,27 +56,9 @@ function SwiperHome() {
                 muted
                 loop
                 playsInline
-                className="w-[4/6] rounded-t-xl"
-              >
-                <source src="/video/bitcoin.mp4" type="video/mp4" />
-              </video>
-              <div className="bg-base-100 p-4 space-y-2  rounded-b-xl ">
-                <h1 className="text-xl font-Poppins font-semibold text-slate-50 text-center">
-                  TRY TO WIN BITCOIN
-                </h1>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div id="1" className={box1}>
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
                 className="w-full rounded-t-xl"
               >
-                <source src="/video/metaviaolet.mp4" type="video/mp4" />
+                <source src="/video/iphonehome.webm" type="video/webm" />
               </video>
               <div className="bg-base-100 p-4 space-y-2  rounded-b-xl ">
                 <h1 className="text-xl font-Poppins font-semibold text-slate-50 text-center">
@@ -95,11 +76,11 @@ function SwiperHome() {
                 playsInline
                 className="w-full rounded-t-xl"
               >
-                <source src="/video/iphoneviolet.mp4" type="video/mp4" />
+                <source src="/video/metaviaolet.webm" type="video/webm" />
               </video>
               <div className="bg-base-100 p-4 space-y-2  rounded-b-xl ">
                 <h1 className="text-xl font-Poppins font-semibold text-slate-50 text-center">
-                  TRY TO WIN IPHONE 13
+                  TRY TO WIN LAND TOKEN
                 </h1>
               </div>
             </div>
@@ -113,11 +94,11 @@ function SwiperHome() {
                 playsInline
                 className="w-full rounded-t-xl"
               >
-                <source src="/video/iphoneviolet.mp4" type="video/mp4" />
+                <source src="/video/iphoneviaolet.webm" type="video/webm" />
               </video>
               <div className="bg-base-100 p-4 space-y-2  rounded-b-xl ">
                 <h1 className="text-xl font-Poppins font-semibold text-slate-50 text-center">
-                  TRY TO WIN IPHONE
+                  TRY TO WIN IPHONE 13
                 </h1>
               </div>
             </div>
